@@ -19,25 +19,20 @@
             }
             #header { 
                 display: inline-block;
-                font-size: 120%;
                 height: 120px;
                 width: 1240px;
             }
-            #header a {
-                margin: 27px 20px 0px 20px;
-                font-weight: bold;
-            }
-            #header img {
+            
+            #header div {
                 display: inline-block;
-                margin-top: 33px;
-                padding-left: 100px;
-                padding-right: 100px;
+                margin: 27px 50px 0px 50px;
+                font-weight: bold;
             }
 
             /* Area 2 */
             #main_picture img { 
                 height: 464px;
-                width: 1400px; 
+                width: 100%; 
             }
 
             /* Area 3 */
@@ -96,17 +91,31 @@
     <body>
         <!-- Area 1  -->
         <div id="header">
-            <a href="#" target="_self">How it Works</a>
-            <a href="#" target="_self">Gifts</a>
-            <a href="about.html" target="_self">About</a>
-            <img src="Resource 1-02/logo.png">
-            <a href="#" target="_self">Login</a>
-            <a href="#" target="_self">Members</a>
-            <a href="#" target="_self">Contacts</a>
+            <div>
+                <a href="#" target="_self">How it Works</a>
+            </div>
+            <div>
+                <a href="#" target="_self">Gifts</a>
+            </div>
+            <div>
+                <a href="about.html" target="_self">About</a>
+            </div>
+
+            <img style="padding-top: 33px;" src="Resource 1-02/logo.png">
+
+            <div>
+                <a href="#" target="_self">Login</a>
+            </div>
+            <div>
+                <a href="#" target="_self">Members</a>
+            </div>
+            <div>
+                <a href="#" target="_self">Contacts</a>
+            </div>
         </div>
         <!-- Area 2  -->
         <div id="main_picture">
-            <img height="auto" width="auto" src="Resource 1-02/main.png">
+            <img src="Resource 1-02/main.png">
         </div>
         <!-- Area 3  -->
         <p class="icon_tile_text">
