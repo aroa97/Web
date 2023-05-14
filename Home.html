@@ -10,26 +10,29 @@
             }
 
             /* Area 1 */
-            a {
-                color: black;
-                text-decoration-line: none;
-            }
-            a:hover {
-                color: red;
-                text-decoration-line: underline;
-            }
             #header { 
                 display: inline-block;
                 height: 120px;
                 width: 1240px;
             }
-            
-            #header div {
-                display: inline-block;
-                margin: 27px 30px 0px 30px;
-                font-weight: bold;
+            #header ul {
+                list-style: none;
+                height: 100%;
             }
-
+            #header li {
+                display: inline-block;
+                margin: 27px 33px 0px 33px;
+            }
+            #header a {
+                font-weight: bold;
+                color: black;
+                text-decoration-line: none;
+            }
+            #header a:hover {
+                color: red;
+                text-decoration-line: underline;
+            }
+            
             /* Area 2 */
             #main_picture img { 
                 height: 464px;
@@ -92,32 +95,24 @@
     <body>
         <!-- Area 1  -->
         <div id="header">
-            <div>
-                <a href="#" target="_self">How it Works</a>
-            </div>
-            <div>
-                <a href="#" target="_self">Gifts</a>
-            </div>
-            <div>
-                <a href="about.html" target="_self">About</a>
-            </div>
+            <ul>
+                <li><a href="#" target="_self">How it Works</a></li>
+                <li><a href="#" target="_self">Gifts</a></li>
+                <li><a href="about.html" target="_self">About</a></li>
 
-            <img style="padding: 33px 100px 0px 100px;" src="Resource 1-02/logo.png">
+                <img style="padding: 33px 100px 0px 100px;" src="Resource 1-02/logo.png">
 
-            <div>
-                <a href="#" target="_self">Login</a>
-            </div>
-            <div>
-                <a href="#" target="_self">Members</a>
-            </div>
-            <div>
-                <a href="#" target="_self">Contacts</a>
-            </div>
+                <li><a href="#" target="_self">Login</a></li>
+                <li><a href="#" target="_self">Members</a></li>
+                <li><a href="#" target="_self">Contacts</a></li>
+            </ul>
         </div>
+
         <!-- Area 2  -->
         <div id="main_picture">
             <img src="Resource 1-02/main.png">
         </div>
+
         <!-- Area 3  -->
         <p class="icon_tile_text">
             "WHAT's FOR DINNER" <br>
@@ -153,6 +148,7 @@
             </p>
         </div>
         <br><br>
+
         <!-- Area 4  -->
         <div class="chefs">
             <div>
