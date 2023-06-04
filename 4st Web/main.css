@@ -52,30 +52,39 @@ section {
 }
 
 article {
-    width: 250px; height: 100%;
+    width: 250px; height: 100%; padding: 70px 40px;
     opacity: 0.4;
-}
-
-article .inner_box {
-    margin: 70px 40px;
     display: flex;
     flex-direction: column;
 
-    height: 460px;
     color: white;
+    transition: 0.5s;
+
+    background-image: url(img/back.png);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
 }
 
-article .inner_box .number {
+article:hover {
+    background-size: 100% 100%;
+    opacity: 1;
+}
+
+article .number {
     width: 72px;
     font: normal bold 48px/1 Verdana;
     border-bottom: 3px solid white;
     padding-bottom: 20px;
 }
-article .inner_box .title {
+article .title {
     font: normal bold 18px/1 Verdana;
     padding: 20px 0px;
 }
-article .inner_box .detail {
+article .detail {
     font: normal 15px/24px Verdana;
     flex-grow: 2;
+}
+
+article a img {
+    width: 100%;
 }
