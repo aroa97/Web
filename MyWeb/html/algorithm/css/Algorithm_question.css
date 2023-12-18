@@ -18,7 +18,24 @@ article > ul {
     display: flex; flex-direction: column;
     background-color: white;
 }
-article > ul  > li {
+article > ul > label {
+    width: 200px;
+    padding: 20px;
+    background-color: pink;
+}
+article > ul > label:hover {
+    color: red;
+}
+article > ul > input[type="checkbox"] {
+    display: none;
+}
+article > ul > input[type="checkbox"]:checked + div {
+    display: inline-block;
+}
+article > ul > div {
+    display: none;
+}
+article > ul  li {
     padding: 20px 0px;
     border-bottom: solid 2px;
     line-height: 30px;
