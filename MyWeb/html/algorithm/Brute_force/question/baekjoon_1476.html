@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BruteFroce</title>
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 1476. 날짜 계산</div>
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1476">https://www.acmicpc.net/problem/1476</a>
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                준규가 사는 나라는 우리가 사용하는 연도와 다른 방식을 이용한다. 준규가 사는 나라에서는 수 3개를 이용해서 연도를 나타낸다. 각각의 수는 지구, 태양, 그리고 달을 나타낸다. <br>
+    지구를 나타내는 수를 E, 태양을 나타내는 수를 S, 달을 나타내는 수를 M이라고 했을 때, 이 세 수는 서로 다른 범위를 가진다. (1 ≤ E ≤ 15, 1 ≤ S ≤ 28, 1 ≤ M ≤ 19) <br>
+    우리가 알고있는 1년은 준규가 살고있는 나라에서는 1 1 1로 나타낼 수 있다. 1년이 지날 때마다, 세 수는 모두 1씩 증가한다. 만약, 어떤 수가 범위를 넘어가는 경우에는 1이 된다. <br>
+    예를 들어, 15년은 15 15 15로 나타낼 수 있다. 하지만, 1년이 지나서 16년이 되면 16 16 16이 아니라 1 16 16이 된다. 이유는 1 ≤ E ≤ 15 라서 범위를 넘어가기 때문이다. <br>
+    E, S, M이 주어졌고, 1년이 준규가 사는 나라에서 1 1 1일때, 준규가 사는 나라에서 E S M이 우리가 알고 있는 연도로 몇 년인지 구하는 프로그램을 작성하시오. <br>
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 세 수 E, S, M이 주어진다. 문제에 나와있는 범위를 지키는 입력만 주어진다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                첫째 줄에 E S M으로 표시되는 가장 빠른 연도를 출력한다. 1 1 1은 항상 1이기 때문에, 정답이 음수가 나오는 경우는 없다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            1부터 1씩 더하면서 정답에 해당하는 수가 나올 때까지 비교해가면 찾아도 정답을 찾을 수 있겠지만 그렇게 될 경우 E, S, M의 범위가 커질 수록 시간이 오래 걸릴 것이다. <br>
+                            <img height="400px" src="image/1476/1476_1.jpg"> <br>
+                            그래서 E, S, M 중 하나를 기준으로 (풀이 코드에서는 E를 기준으로 풀었다) 입력받은 값에 선택한 변수 범위의 크기만큼 더하면서 비교해가면 1씩 더한 경우보다 더 빠르게 정답을 구할 수 있을 것이다. <br>
+                            <img height="400px" src="image/1476/1476_2.jpg">
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/6e35dd5653634016547ebab1b0340e22.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/20261ce2c0584c7fe64a16925bd9a973.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/80c22b1d7f5bcbeee09f575b0c893ff2.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/579f410a4d3d7f3c84ec8caf7fa8c882.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/64e313216f040e00b3ecf3dbce4b46e8.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>
