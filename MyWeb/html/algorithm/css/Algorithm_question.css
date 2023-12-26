@@ -1,0 +1,89 @@
+#main {
+    width: 100%;
+}
+section {
+    width: 100%;
+    padding-left: 100px;
+    display: flex; justify-content: center;
+}
+article {
+    width: 1000px;
+}
+article .algorithm_title {
+    width: auto;
+    padding: 20px;
+    border-bottom: solid 3px;
+    font-size: 40px;
+}
+article > ul {
+    width: 100%;
+    padding: 0px 20px;
+    display: flex; flex-direction: column;
+    background-color: white;
+}
+article > ul > label {
+    width: 200px;
+    margin: 10px 0px; padding: 10px;
+    text-align: center;
+    border-style: solid;
+    border-color: pink;
+}
+article > ul > label:hover {
+    background-color: pink;
+}
+article > ul > input[type="checkbox"] {
+    display: none;
+}
+article > ul > input[type="checkbox"]:checked + div {
+    display: inline-block;
+}
+article > ul > div {
+    display: none;
+}
+article > ul li {
+    padding: 20px 0px;
+    border-bottom: solid 2px;
+    line-height: 30px;
+}
+article > .languagebox {
+    width: 100%;
+    /*background-color: aqua;*/
+    display: flex; justify-content: center;
+}
+article > .languagebox > label {
+    width: 80px; height: 80px;
+    margin: 10px 5px; padding-top: 20px;
+
+    color: pink;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10%;
+    border-style: solid;
+    border-color: pink;
+}
+article > .languagebox > label:hover {
+    background-color: pink;
+    color: red;
+}
+article > input[type="radio"] {
+    display: none;
+}
+article > .codebox {
+    width: 100%; 
+    margin-bottom: 20px; padding: 20px 20px 5px 20px;
+    
+    display: none;
+    position: relative;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: pink;
+}
+article > .codebox > img {
+    width: 90px;
+    padding: 10px;
+    right: 20px;
+    position: absolute;
+}
+article > input[type="radio"]:checked + .codebox {
+    display: inline-block;
+}

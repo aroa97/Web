@@ -1,0 +1,21 @@
+section {
+    width: 100%; height: auto;
+    margin-left: 100px;
+}
+section > ul {
+    display: flex; flex-direction: column;
+    padding: 20px;
+}
+section > ul > li {
+    margin: 5px; padding: 10px;
+    background-color: white;
+}
+section > ul > li > a {
+    width: 500px; height: 100px;
+    padding: 10px;
+    color: pink;
+    border-style: solid;
+}
+section > ul > li > a:hover {
+    color: red;
+}
