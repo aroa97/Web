@@ -32,47 +32,44 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 2875. 대회 or 인턴 </div> 
+                    <div class="algorithm_title">백준 1773. 폭죽쇼 </div> 
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/2875">https://www.acmicpc.net/problem/2875</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1773">https://www.acmicpc.net/problem/1773</a>
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                백준대학교에서는 대회에 나갈 때 2명의 여학생과 1명의 남학생이 팀을 결성해서 나가는 것이 원칙이다. (왜인지는 총장님께 여쭈어보는 것이 좋겠다.)
+                                학생들은 3주가 지난 기념으로 매점에서 1월 1일이 지나 싸게 파는 폭죽을 사서 터뜨리고 있다. <br> <br>
 
-백준대학교는 뛰어난 인재들이 많아 올해에도 N명의 여학생과 M명의 남학생이 팀원을 찾고 있다. 대회에 참여하려는 학생들 중 K명은 반드시 인턴쉽 프로그램에 참여해야 한다. 인턴쉽에 참여하는 학생은 대회에 참여하지 못한다.
+폭죽쇼를 하는 동안 N명의 학생들이 폭죽을 터뜨린다. 그리고 이 N명의 학생은 각각 일정한 주기로 폭죽을 터뜨린다. 물론 이 주기는 학생들마다 같을 수도, 다를 수도 있다. 그리고 우리는 초 단위로 관찰을 하고, 폭죽 역시 초 단위로 터진다. <br> <br>
 
-백준대학교에서는 뛰어난 인재들이 많기 때문에, 많은 팀을 만드는 것이 최선이다.
-
-여러분은 여학생의 수 N, 남학생의 수 M, 인턴쉽에 참여해야하는 인원 K가 주어질 때 만들 수 있는 최대의 팀 수를 구하면 된다.
+폭죽쇼가 끝날 때까지 얼마나 많은 시간동안 밤하늘에 폭죽이 터지는 것을 볼 수 있는지 궁금해 하는 조교를 도와주자.
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 N, M, K가 순서대로 주어진다. (0 ≤ M ≤ 100, 0 ≤ N ≤ 100, 0 ≤ K ≤ M+N)
+                                첫 줄에 폭죽을 터뜨리는 학생의 수 N(1 ≤ N ≤ 100)과 폭죽쇼가 끝나는 시간 C(1 ≤ C ≤ 2,000,000)가 주어진다. 그 다음 N개의 줄에는 학생들이 폭죽을 터뜨리는 주기가 한 줄에 하나씩 주어진다. 주기는 1보다 크거나 같고, C보다 작거나 같은 자연수이다.
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                만들 수 있는 팀의 최대 개수을 출력하면 된다.
+                                폭죽쇼가 시작되고 끝날 때까지 밤하늘에 폭죽을 볼 수 있는 총 시간을 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            여자 N명과 남자 M명의 데이터를 비교해 만들 수 있는 최대 개수를 구한다. ( N / 2, M 중 작은 수 ) <br> 
-                            그 뒤 인턴 K명을 남은 인원으로 채울 수 있는 지 확인. <br>
-                            채울 수 있으면 처음에 구한 최대 개수를 그대로 출력. <br> <br>
-                            <img style="height: 300px;" src="image/2875/2875_1.jpg"> <br>
-                            아니면 부족한 인원만큼 팀 개수를 줄인 값을 출력. <br> <br>
-                            <img style="height: 300px;" src="image/2875/2875_2.jpg"> <br>
+                            일정한 주기로 폭죽들이 터지고 터지는 폭죽을 볼 수 있는 총 시간을 구하는 문제이다. <br>
+                            데이터를 저장할 배열을 하나 만들어서 학생이 폭죽을 터트리는 주기의 배수마다 배열에 저장하는 방식을 사용했다. <br> <br>
+                            <img style="height: 175px;" src="image/1773/1773_1.jpg"> <br> <br>
+                            학생이 폭죽을 터트리는 주기가 1일 경우 의미없는 계산이 이루어지고 시간만 소요되기 때문에 폭죽쇼가 끝나는 시간인 C를 출력하도록 코드를 짜도 된다. <br>
                         </li>
                     </ul>
                     <div class="languagebox">
                         <label for="c++"> C++ </label>
                         <label for="csharp"> C# </label>
                         <label for="java"> Java </label>
+                        <label style="padding-top: 10px;"  for="javascript"> Java<br>Script </label>
                         <label for="kotlin"> Kotlin </label> 
                         <label for="python"> Python </label>
                     </div>
@@ -80,31 +77,37 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/3a8091159cf2c13425e7e87850ae23a7.js"></script>
+                        <script src="https://gist.github.com/aroa97/56be78d53130eb9c279f1d5f2aeac840.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/30a434a52073322f360942182b2e75ae.js"></script>
+                        <script src="https://gist.github.com/aroa97/ef6cdbfd5e9a42bf2479612bb1f56e2a.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/04fb69475ad297dd499a4e1572de7880.js"></script>
+                        <script src="https://gist.github.com/aroa97/a49f21b810ed92b81dc6861f77e11d25.js"></script>
+                    </div>
+
+                    <input type="radio" id="javascript" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/javascript.png">
+                        <script src="https://gist.github.com/aroa97/226d8be17106b530aaff659d90ca8d02.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/b1e0fe4595e1ae5226a70264c9a36926.js"></script>
+                        <script src="https://gist.github.com/aroa97/8c43009911d5e2e1639db66e2900d581.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/97a85ae48f82f8e20389ea77ff9a33e3.js"></script>
+                        <script src="https://gist.github.com/aroa97/f265ad2a5075d1bedf5adc09cd1f832d.js"></script>
                     </div>
                     
                 </article>
