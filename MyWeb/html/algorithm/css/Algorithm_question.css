@@ -21,6 +21,10 @@ article > ul {
     display: flex; flex-direction: column;
     background-color: white;
 }
+article > ul > li > a {
+    color: red;
+}
+
 article > ul > label {
     width: 200px;
     margin: 10px 0px; padding: 10px;

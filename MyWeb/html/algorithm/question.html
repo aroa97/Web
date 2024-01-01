@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Etc</title>
+        <title>title 바꾸기</title> <!-- 수정 -->
         <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
         <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
         <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
@@ -32,52 +32,36 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 16968. 차량 번호판 1</div>
+                    <div class="algorithm_title">백준 1000</div> <!-- 수정 -->
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/16968">https://www.acmicpc.net/problem/16968</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1000">https://www.acmicpc.net/problem/1000</a> <!-- 수정 -->
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                상도시의 차량 번호판 형식이 주어졌을 때, 가능한 차량 번호판의 개수를 구해보자. <br> <br>
 
-&nbsp;&nbsp; ● 번호판에 사용할 수 있는 숫자는 0, 1, 2, ..., 8, 9이다. <br>
-&nbsp;&nbsp; ● 사용할 수 있는 문자는 a, b, c, d, ..., y, z이다. <br>
-&nbsp;&nbsp; ● 차량 번호판의 형식은 최대 4글자이고, c와 d로 이루어진 문자열로 나타낼 수 있다. <br>
-&nbsp;&nbsp; ● c는 문자가 위치하는 자리, d는 숫자가 위치하는 자리이다. <br>
-&nbsp;&nbsp; ● 같은 문자 또는 숫자가 연속해서 2번 나타나면 안 된다. <br> <br>
-예를 들어, 형식이 "cd"이면, a1, d4, h5, k4 등이 가능하다. 형식이 "dd"인 경우에 01, 10, 34, 69는 가능하지만, 00, 11, 55, 66은 같은 숫자가 2번 연속해서 불가능하다.
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 차량 번호판의 형식이 주어진다. 형식은 길이가 4보다 작거나 같으며, c와 d로만 이루어져 있다.
+
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                첫째 줄에 가능한 차량 번호판의 개수를 출력한다.
+
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            문제에서 사용할 수 있는 숫자의 개수는 10개, 문자의 개수는 26개다. <br>
-                            <img style="height: 100px;" src="image/16968/16968_1.jpg"> <br>
-                            단순히 모든 경우의 수를 구한다고 한다면 입력받은 문자열에 따라서 각각의 개수만큼 곱하면 된다. <br>
-                            <img style="height: 50px;" src="image/16968/16968_2.jpg"> <br>
-                            <img style="height: 50px;" src="image/16968/16968_3.jpg"> <br>
-                            <img style="height: 50px;" src="image/16968/16968_4.jpg"> <br>
-                            같은 문자 또는 숫자가 연속해서 나타나면 안 된다는 문항이 있기 때문에 입력받은 문자열에서 같은 문자가 연속해서 나올 경우 중복을 고려해 같은 문자 또는 숫자의 경우를 제외한다. <br>
-                            <img style="height: 50px;" src="image/16968/16968_5.jpg"> <br>
-                            <img style="height: 50px;" src="image/16968/16968_6.jpg"> <br>
-                            <img style="height: 50px;" src="image/16968/16968_7.jpg"> 
                         </li>
                     </ul>
                     <div class="languagebox">
                         <label for="c++"> C++ </label>
                         <label for="csharp"> C# </label>
                         <label for="java"> Java </label>
+                        <label style="padding-top: 10px;"  for="javascript"> Java<br>Script </label>
                         <label for="kotlin"> Kotlin </label> 
                         <label for="python"> Python </label>
                     </div>
@@ -85,31 +69,37 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/222f2100c8fa0f563dd383d5f8d17434.js"></script>
+
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/74e4c641b8fd55b7e43a9014e76d32ca.js"></script>
+
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/8465059077ef8eb67950fa207e3a7e21.js"></script>
+
+                    </div>
+
+                    <input type="radio" id="javascript" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/javascript.png">
+
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/a01daaf2084ca4f8d26576c2a48ec2de.js"></script>
+
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/1877105889e9fbffeb9db6a5fa516775.js"></script>
+
                     </div>
                     
                 </article>
