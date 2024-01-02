@@ -32,40 +32,38 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 1463. 1로 만들기</div> 
+                    <div class="algorithm_title">백준 1699. 제곱수의 합</div> 
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1463">https://www.acmicpc.net/problem/1463</a> 
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1699">https://www.acmicpc.net/problem/1699</a> 
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                정수 X에 사용할 수 있는 연산은 다음과 같이 세 가지 이다. <br> <br>
-
-&nbsp; &nbsp; 1. X가 3으로 나누어 떨어지면, 3으로 나눈다. <br>
-&nbsp; &nbsp; 2. X가 2로 나누어 떨어지면, 2로 나눈다. <br>
-&nbsp; &nbsp; 3. 1을 뺀다. <br> <br>
-정수 N이 주어졌을 때, 위와 같은 연산 세 개를 적절히 사용해서 1을 만들려고 한다. 연산을 사용하는 횟수의 최솟값을 출력하시오.
+                                어떤 자연수 N은 그보다 작거나 같은 제곱수들의 합으로 나타낼 수 있다. 
+                                예를 들어 11=3<sup>2</sup>+1<sup>2</sup>+1<sup>2</sup>(3개 항)이다. 
+                                이런 표현방법은 여러 가지가 될 수 있는데, 11의 경우 11=2<sup>2</sup>+2<sup>2</sup>+1<sup>2</sup>+1<sup>2</sup>+1<sup>2</sup>(5개 항)도 가능하다. 
+                                이 경우, 수학자 숌크라테스는 “11은 3개 항의 제곱수 합으로 표현할 수 있다.”라고 말한다. 또한 11은 그보다 적은 항의 제곱수 합으로 표현할 수 없으므로, 11을 그 합으로써 표현할 수 있는 제곱수 항의 최소 개수는 3이다. <br> <br>
+                                주어진 자연수 N을 이렇게 제곱수들의 합으로 표현할 때에 그 항의 최소개수를 구하는 프로그램을 작성하시오.
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 1보다 크거나 같고, 10<sup>6</sup>보다 작거나 같은 정수 N이 주어진다.
+                                첫째 줄에 자연수 N이 주어진다. (1 ≤ N ≤ 100,000)
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                첫째 줄에 연산을 하는 횟수의 최솟값을 출력한다.
+                                주어진 자연수를 제곱수의 합으로 나타낼 때에 그 제곱수 항의 최소 개수를 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            문제에서 주어진 조건을 사용해서 점화식을 만들었다. <br> 
-                            <img style="height: 200px;" src="image/1463/1463_1.jpg"> <br>
-                            3개의 점화식을 전부 다 비교해서 최솟값만을 배열에 저장한다. <br>
-                            <img style="height: 200px;" src="image/1463/1463_2.jpg"> <br>
-                            재귀함수 종료 후 입력받은 수의 최솟값을 출력.
-
+                            제곱수 항의 개수의 최솟값은 1이며 해당하는 자연수는 제곱수가 될 것이다. <br> <br>
+                            <img style="height: 100px;" src="image/1699/1699_1.jpg"> <br> <br>
+                            제곱수가 아닌 자연수에 대해서는 해당 자연수보다 작은 제곱수와 해당 자연수에서 제곱수를 뺀 수의 최솟값의 합을 비교하면서 제곱수 항의 최소 개수를 구한다.(점화식) <br> <br>
+                            <img style="height: 200px;" src="image/1699/1699_2.jpg"> <br> <br>
+                            Bottom-Up 형식을 사용했으며 입력받은 자연수까지 반복한다.
                         </li>
                     </ul>
                     <div class="languagebox">
@@ -79,31 +77,31 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/8988d69a0967e9621337b966ef72e45b.js"></script>
+                        <script src="https://gist.github.com/aroa97/b1c4a397f3bd57ecbd09e66998c88f8b.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/a2b0f97e46f157efcc9b1cbd1b55d2c5.js"></script>
+                        <script src="https://gist.github.com/aroa97/f4f4a48fb37c94575d970d836ec94400.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/c23dab5b0fdd49ba8cd95ae4560ea7e2.js"></script>
+                        <script src="https://gist.github.com/aroa97/e6d2f2541fd960376ad49008e3c914a8.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/861cdced1b6c0d0c17e362f927d7b07a.js"></script>
+                        <script src="https://gist.github.com/aroa97/c55833555693282bd855ccc5d45e57b2.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/ecb109e9a2c9dcc14430a67d24f9f282.js"></script>
+                        <script src="https://gist.github.com/aroa97/b07e0437e046ae30827af5408186db1f.js"></script>
                     </div>
                     
                 </article>

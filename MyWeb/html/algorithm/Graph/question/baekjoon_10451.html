@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>DynamicProgramming</title> 
+        <title>Graph</title>
         <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
         <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
         <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
@@ -32,40 +32,49 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 1463. 1로 만들기</div> 
+                    <div class="algorithm_title">백준 10451. 순열 사이클</div>
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1463">https://www.acmicpc.net/problem/1463</a> 
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/10451">https://www.acmicpc.net/problem/10451</a>
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                정수 X에 사용할 수 있는 연산은 다음과 같이 세 가지 이다. <br> <br>
+                                1부터 N까지 정수 N개로 이루어진 순열을 나타내는 방법은 여러 가지가 있다. 예를 들어, 8개의 수로 이루어진 순열 (3, 2, 7, 8, 1, 4, 5, 6)을 배열을 이용해 표현하면  
+ 
+                                <img style="height: 50px;" src="image/10451/10451_2.png"> 와 같다. 또는, Figure 1과 같이 방향 그래프로 나타낼 수도 있다. <br> <br>
+                                
+                                <img style="height: 200px;" src="image/10451/10451_1.png"> <br> <br>
 
-&nbsp; &nbsp; 1. X가 3으로 나누어 떨어지면, 3으로 나눈다. <br>
-&nbsp; &nbsp; 2. X가 2로 나누어 떨어지면, 2로 나눈다. <br>
-&nbsp; &nbsp; 3. 1을 뺀다. <br> <br>
-정수 N이 주어졌을 때, 위와 같은 연산 세 개를 적절히 사용해서 1을 만들려고 한다. 연산을 사용하는 횟수의 최솟값을 출력하시오.
+                                순열을 배열을 이용해  <img style="height: 50px;" src="image/10451/10451_3.png"> 
+ 
+                                로 나타냈다면, i에서 πi로 간선을 이어 그래프로 만들 수 있다. <br>
+
+                                Figure 1에 나와있는 것 처럼, 순열 그래프 (3, 2, 7, 8, 1, 4, 5, 6) 에는 총 3개의 사이클이 있다. 이러한 사이클을 "순열 사이클" 이라고 한다. <br>
+ 
+                                N개의 정수로 이루어진 순열이 주어졌을 때, 순열 사이클의 개수를 구하는 프로그램을 작성하시오.
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 1보다 크거나 같고, 10<sup>6</sup>보다 작거나 같은 정수 N이 주어진다.
+                                첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스의 첫째 줄에는 순열의 크기 N (2 ≤ N ≤ 1,000)이 주어진다. 둘째 줄에는 순열이 주어지며, 각 정수는 공백으로 구분되어 있다.
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                첫째 줄에 연산을 하는 횟수의 최솟값을 출력한다.
+                                각 테스트 케이스마다, 입력으로 주어진 순열에 존재하는 순열 사이클의 개수를 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            문제에서 주어진 조건을 사용해서 점화식을 만들었다. <br> 
-                            <img style="height: 200px;" src="image/1463/1463_1.jpg"> <br>
-                            3개의 점화식을 전부 다 비교해서 최솟값만을 배열에 저장한다. <br>
-                            <img style="height: 200px;" src="image/1463/1463_2.jpg"> <br>
-                            재귀함수 종료 후 입력받은 수의 최솟값을 출력.
-
+                            입력받은 순서와 데이터를 정점으로 생각하고 이 둘 사이에 단 방향 간선을 만든다. <br> <br>
+                            <img style="height: 200px;" src="image/10451/10451_4.jpg"> <br> <br>
+                            그렇게 만들어진 정점과 간선을 DFS를 통해 답을 도출하기로 했다. <br>
+                            DFS가 종료되면 사이클이 만들어지고 모든 탐색이 끝나면 사이클의 개수를 출력할 수 있다. <br> <br>
+                            <img style="height: 250px;" src="image/10451/10451_5.jpg"> <br> <br> <br>
+                            <img style="height: 250px;" src="image/10451/10451_6.jpg"> <br> <br> <br>
+                            <img style="height: 250px;" src="image/10451/10451_7.jpg"> <br> <br> <br>
+                            <img style="height: 250px;" src="image/10451/10451_8.jpg"> <br> 
                         </li>
                     </ul>
                     <div class="languagebox">
@@ -79,31 +88,31 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/8988d69a0967e9621337b966ef72e45b.js"></script>
+                        <script src="https://gist.github.com/aroa97/08937ff6f752d6fae1486487911def17.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/a2b0f97e46f157efcc9b1cbd1b55d2c5.js"></script>
+                        <script src="https://gist.github.com/aroa97/5347d9cda7d0efaac3785f16d5faeeb7.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/c23dab5b0fdd49ba8cd95ae4560ea7e2.js"></script>
+                        <script src="https://gist.github.com/aroa97/4e00ccdbd0c54c856dbd019fb50eddc9.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/861cdced1b6c0d0c17e362f927d7b07a.js"></script>
+                        <script src="https://gist.github.com/aroa97/c4216831fdd7cc4d3aeb795fb60e2c4d.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/ecb109e9a2c9dcc14430a67d24f9f282.js"></script>
+                        <script src="https://gist.github.com/aroa97/1d88a9e07ec8a23262ef8eaa960c22eb.js"></script>
                     </div>
                     
                 </article>

@@ -32,40 +32,42 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 1463. 1로 만들기</div> 
+                    <div class="algorithm_title">백준 11727. 2×n 타일링 2</div> 
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1463">https://www.acmicpc.net/problem/1463</a> 
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/11727">https://www.acmicpc.net/problem/11727</a> 
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                정수 X에 사용할 수 있는 연산은 다음과 같이 세 가지 이다. <br> <br>
-
-&nbsp; &nbsp; 1. X가 3으로 나누어 떨어지면, 3으로 나눈다. <br>
-&nbsp; &nbsp; 2. X가 2로 나누어 떨어지면, 2로 나눈다. <br>
-&nbsp; &nbsp; 3. 1을 뺀다. <br> <br>
-정수 N이 주어졌을 때, 위와 같은 연산 세 개를 적절히 사용해서 1을 만들려고 한다. 연산을 사용하는 횟수의 최솟값을 출력하시오.
+                                2×n 직사각형을 1×2, 2×1과 2×2 타일로 채우는 방법의 수를 구하는 프로그램을 작성하시오. <br> <br>
+                                아래 그림은 2×17 직사각형을 채운 한가지 예이다. <br> <br>
+                                <img style="height: 100px;" src="image/11727/11727_1.gif">
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 1보다 크거나 같고, 10<sup>6</sup>보다 작거나 같은 정수 N이 주어진다.
+                                첫째 줄에 n이 주어진다. (1 ≤ n ≤ 1,000)
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                첫째 줄에 연산을 하는 횟수의 최솟값을 출력한다.
+                                첫째 줄에 2×n 크기의 직사각형을 채우는 방법의 수를 10,007로 나눈 나머지를 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            문제에서 주어진 조건을 사용해서 점화식을 만들었다. <br> 
-                            <img style="height: 200px;" src="image/1463/1463_1.jpg"> <br>
-                            3개의 점화식을 전부 다 비교해서 최솟값만을 배열에 저장한다. <br>
-                            <img style="height: 200px;" src="image/1463/1463_2.jpg"> <br>
-                            재귀함수 종료 후 입력받은 수의 최솟값을 출력.
+                            <a href="baekjoon_11726.html">[백준 11726. 2×n 타일링]</a>와 유사한 문제이다. 2×2 타일이 추가가 된 것 뿐이다. <br>
+                            n이 1일 때 방법의 수는 1개다. <br>
+                            n이 2일 때 방법의 수는 3개다. <br> <br>
+                            <img style="height: 400px;" src="image/11727/11727_2.jpg"> <br> <br>
+                            n이 3부터는 아래 그림 모양을 붙혀 방법의 수를 구한다. <br>
+                            <img style="height: 200px;" src="image/11727/11727_3.jpg"> <br>
+                            세로로 세워진 두 개의 2×n 크기의 직사각형의 경우 중복되는 모양이 발생하므로 가로로 눕혀진 두 개의 2×n 크기의 직사각형과 2×2 크기의 정사각형을 사용한다. <br>
+                            <img style="height: 400px;" src="image/11727/11727_4.jpg"> <br> 
 
+                            점화식은 f(n) = f(n - 1) + f(n - 2) + f(n - 2) 다. <br>
+                            하지만 문제에서 10007로 나눈 나머지를 출력하라고 했으므로 f(n) = (f(n - 1) + 2 * f(n - 2)) % 10007 로 점화식을 변경한다.
                         </li>
                     </ul>
                     <div class="languagebox">
@@ -79,31 +81,31 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/8988d69a0967e9621337b966ef72e45b.js"></script>
+                        <script src="https://gist.github.com/aroa97/98cc7144b0a2da84efe3f2f1d124447f.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/a2b0f97e46f157efcc9b1cbd1b55d2c5.js"></script>
+                        <script src="https://gist.github.com/aroa97/088f24401357fcec41df5d970e021178.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/c23dab5b0fdd49ba8cd95ae4560ea7e2.js"></script>
+                        <script src="https://gist.github.com/aroa97/dcb439c04c3957e366b2d27454f4d5f3.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/861cdced1b6c0d0c17e362f927d7b07a.js"></script>
+                        <script src="https://gist.github.com/aroa97/73b1ca0e72637edf0a4c81096fff412b.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/ecb109e9a2c9dcc14430a67d24f9f282.js"></script>
+                        <script src="https://gist.github.com/aroa97/faac51515b04e3a30a91d801addc0f40.js"></script>
                     </div>
                     
                 </article>

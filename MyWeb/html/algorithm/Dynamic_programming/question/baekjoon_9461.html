@@ -32,40 +32,39 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 1463. 1로 만들기</div> 
+                    <div class="algorithm_title">백준 9461. 파도반 수열</div> 
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1463">https://www.acmicpc.net/problem/1463</a> 
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/9461">https://www.acmicpc.net/problem/9461</a> 
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                정수 X에 사용할 수 있는 연산은 다음과 같이 세 가지 이다. <br> <br>
-
-&nbsp; &nbsp; 1. X가 3으로 나누어 떨어지면, 3으로 나눈다. <br>
-&nbsp; &nbsp; 2. X가 2로 나누어 떨어지면, 2로 나눈다. <br>
-&nbsp; &nbsp; 3. 1을 뺀다. <br> <br>
-정수 N이 주어졌을 때, 위와 같은 연산 세 개를 적절히 사용해서 1을 만들려고 한다. 연산을 사용하는 횟수의 최솟값을 출력하시오.
+                                오른쪽 그림과 같이 삼각형이 나선 모양으로 놓여져 있다. 첫 삼각형은 정삼각형으로 변의 길이는 1이다. 그 다음에는 다음과 같은 과정으로 정삼각형을 계속 추가한다. 나선에서 가장 긴 변의 길이를 k라 했을 때, 그 변에 길이가 k인 정삼각형을 추가한다. <br> <br>
+                                파도반 수열 P(N)은 나선에 있는 정삼각형의 변의 길이이다. P(1)부터 P(10)까지 첫 10개 숫자는 1, 1, 1, 2, 2, 3, 4, 5, 7, 9이다. <br> <br>
+                                N이 주어졌을 때, P(N)을 구하는 프로그램을 작성하시오. <br>
+                                <img style="height: 200px;" src="image/9461/9461_1.png">
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 1보다 크거나 같고, 10<sup>6</sup>보다 작거나 같은 정수 N이 주어진다.
+                                첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스는 한 줄로 이루어져 있고, N이 주어진다. (1 ≤ N ≤ 100)
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                첫째 줄에 연산을 하는 횟수의 최솟값을 출력한다.
+                                각 테스트 케이스마다 P(N)을 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            문제에서 주어진 조건을 사용해서 점화식을 만들었다. <br> 
-                            <img style="height: 200px;" src="image/1463/1463_1.jpg"> <br>
-                            3개의 점화식을 전부 다 비교해서 최솟값만을 배열에 저장한다. <br>
-                            <img style="height: 200px;" src="image/1463/1463_2.jpg"> <br>
-                            재귀함수 종료 후 입력받은 수의 최솟값을 출력.
+                            그림을 보고 점화식을 만들게 된다면 N이 6이상 일 때 P(N) = P(N - 1) + P(N - 5) 다. <br>
+                            <img style="height: 400px;" src="image/9461/9461_2.jpg"> <br>
+                            P(1)부터 P(5)까지의 값만 설정해둔다면 이대로 코드를 작성해서 제출해도 정답일 것이다. <br> <br>
 
+                            그 외의 점화식으로도 답을 맞출 수가 있었다. <br>
+                            P(1)부터 P(3)까지의 값만 설정해고 다음 점화식을 사용한해면 된다. [ P(N) = P(N - 2) + P(N - 3) ] <br>
+                            주의점은 int범위 넘어가므로 long을 사용한다.                     
                         </li>
                     </ul>
                     <div class="languagebox">
@@ -79,31 +78,31 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/8988d69a0967e9621337b966ef72e45b.js"></script>
+                        <script src="https://gist.github.com/aroa97/6ff6c0a3ede5ffbf466acd570030eb0d.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/a2b0f97e46f157efcc9b1cbd1b55d2c5.js"></script>
+                        <script src="https://gist.github.com/aroa97/2e339f18fdce2217cc3f4926bbddd52f.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/c23dab5b0fdd49ba8cd95ae4560ea7e2.js"></script>
+                        <script src="https://gist.github.com/aroa97/f78253efd44ca5a28f13e6b40ffe8cfa.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/861cdced1b6c0d0c17e362f927d7b07a.js"></script>
+                        <script src="https://gist.github.com/aroa97/c5fba9153053b62b6f14c38bcc72da7e.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/ecb109e9a2c9dcc14430a67d24f9f282.js"></script>
+                        <script src="https://gist.github.com/aroa97/5cb34357c8a98a0411256a50cbd051f1.js"></script>
                     </div>
                     
                 </article>

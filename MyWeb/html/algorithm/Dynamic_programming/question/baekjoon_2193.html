@@ -32,40 +32,47 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 1463. 1로 만들기</div> 
+                    <div class="algorithm_title">백준 2193. 이친수</div> 
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1463">https://www.acmicpc.net/problem/1463</a> 
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/2193">https://www.acmicpc.net/problem/2193</a> 
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                정수 X에 사용할 수 있는 연산은 다음과 같이 세 가지 이다. <br> <br>
+                                0과 1로만 이루어진 수를 이진수라 한다. 이러한 이진수 중 특별한 성질을 갖는 것들이 있는데, 이들을 이친수(pinary number)라 한다. 이친수는 다음의 성질을 만족한다. <br> <br>
 
-&nbsp; &nbsp; 1. X가 3으로 나누어 떨어지면, 3으로 나눈다. <br>
-&nbsp; &nbsp; 2. X가 2로 나누어 떨어지면, 2로 나눈다. <br>
-&nbsp; &nbsp; 3. 1을 뺀다. <br> <br>
-정수 N이 주어졌을 때, 위와 같은 연산 세 개를 적절히 사용해서 1을 만들려고 한다. 연산을 사용하는 횟수의 최솟값을 출력하시오.
+                                &nbsp; &nbsp; 1. 이친수는 0으로 시작하지 않는다. <br>
+                                &nbsp; &nbsp; 2. 이친수에서는 1이 두 번 연속으로 나타나지 않는다. 즉, 11을 부분 문자열로 갖지 않는다. <br>
+                                &nbsp; &nbsp; 3. 예를 들면 1, 10, 100, 101, 1000, 1001 등이 이친수가 된다. 하지만 0010101이나 101101은 각각 1, 2번 규칙에 위배되므로 이친수가 아니다. <br> <br>
+
+                                N(1 ≤ N ≤ 90)이 주어졌을 때, N자리 이친수의 개수를 구하는 프로그램을 작성하시오.
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 1보다 크거나 같고, 10<sup>6</sup>보다 작거나 같은 정수 N이 주어진다.
+                                첫째 줄에 N이 주어진다.
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                첫째 줄에 연산을 하는 횟수의 최솟값을 출력한다.
+                                첫째 줄에 N자리 이친수의 개수를 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            문제에서 주어진 조건을 사용해서 점화식을 만들었다. <br> 
-                            <img style="height: 200px;" src="image/1463/1463_1.jpg"> <br>
-                            3개의 점화식을 전부 다 비교해서 최솟값만을 배열에 저장한다. <br>
-                            <img style="height: 200px;" src="image/1463/1463_2.jpg"> <br>
-                            재귀함수 종료 후 입력받은 수의 최솟값을 출력.
+                            N = 1일 때 이진수는 "0", "1"이다. 하지만 이친수는 "0"으로 시작하지 않기 때문에 이친수는 "1" 하나다. <br> <br>
+                            N = 1일 때의 이친수를 이용해 N = 2일 때의 이친수를 만들기로 하였다. <br>
+                            이친수에서 1이 두번 연속으로 나타나면 안되므로 N = 2일 때의 이친수는 "10" 하나다. <br> <br>
+                            동일하게 N = 2일 때의 이친수를 이용해 N = 3일 때의 이친수를 만들기로 하였다. <br>
+                            "10"은 뒤에 "0"으로 끝나므로 "1", "0" 둘 다 붙을 수 있다. <br>
+                            때문에 N = 3일 때 이친수는 "101", "100" 둘이다. <br>
+                            이런 식으로 "1"으로 끝나는 이친수에는 "0"을 붙혀 이친수 하나를 만들고 "0"으로 끝나는 이친수에는 "1", "0" 둘 다 붙혀 이친수 둘을 만든다. <br> <br>
 
+                            <img style="height: 400px;" src="image/2193/2193_1.jpg"> <br> <br>
+
+                            그 과정에서 이친수의 개수가 피보나치 수와 같다는 점을 발견할 수 있다. <br>
+                            N의 범위가 1이상 90이하이므로 <a href="baekjoon_2748.html">[백준 2745. 피보나치 수 2]</a>와 동일한 코드를 사용한다.
                         </li>
                     </ul>
                     <div class="languagebox">
@@ -79,31 +86,31 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/8988d69a0967e9621337b966ef72e45b.js"></script>
+                        <script src="https://gist.github.com/aroa97/8322cccd7b004ed9f62a201ed6d4f674.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/a2b0f97e46f157efcc9b1cbd1b55d2c5.js"></script>
+                        <script src="https://gist.github.com/aroa97/c5f767837b8d90a472c31a4668cbd383.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/c23dab5b0fdd49ba8cd95ae4560ea7e2.js"></script>
+                        <script src="https://gist.github.com/aroa97/d7f7e58b91e1e41addb765307f87ff7c.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/861cdced1b6c0d0c17e362f927d7b07a.js"></script>
+                        <script src="https://gist.github.com/aroa97/9ad81577eecbd3d2d2f2973c65f001e4.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/ecb109e9a2c9dcc14430a67d24f9f282.js"></script>
+                        <script src="https://gist.github.com/aroa97/4d3c23012a3d6fd9c39a6378040df354.js"></script>
                     </div>
                     
                 </article>
