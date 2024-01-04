@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Graph</title>
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 11724. 연결 요소의 개수</div>
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/11724">https://www.acmicpc.net/problem/11724</a>
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                방향 없는 그래프가 주어졌을 때, 연결 요소 (Connected Component)의 개수를 구하는 프로그램을 작성하시오.
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 정점의 개수 N과 간선의 개수 M이 주어진다. (1 ≤ N ≤ 1,000, 0 ≤ M ≤ N×(N-1)/2) 둘째 줄부터 M개의 줄에 간선의 양 끝점 u와 v가 주어진다. (1 ≤ u, v ≤ N, u ≠ v) 같은 간선은 한 번만 주어진다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                첫째 줄에 연결 요소의 개수를 출력한다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            입력받은 데이터를 기준으로 정점끼리 연결했을 때 만들어지는 그래프의 개수를 구하는 문제이다. <br>
+                            <img style="height: 500px;" src="image/11724/11724_1.jpg"> <br>
+                            DFS를 사용했으며 모든 탐색이 끝나면 만들어진 그래프의 개수를 출력한다.
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/95ed2cafab1ea904d12f6ee3dcc0820b.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/f0b9102caa79090d00f6a95096b8ade1.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/1ee9112b77b5cbb0d39e18d941be3a34.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/d168170b8010c32622c60ee4f1f74eca.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/a580ae68715dc1f99f49014f97630a0c.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Graph</title>
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 11725. 트리의 부모 찾기</div>
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/11725">https://www.acmicpc.net/problem/11725</a>
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                루트 없는 트리가 주어진다. 이때, 트리의 루트를 1이라고 정했을 때, 각 노드의 부모를 구하는 프로그램을 작성하시오.
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 노드의 개수 N (2 ≤ N ≤ 100,000)이 주어진다. 둘째 줄부터 N-1개의 줄에 트리 상에서 연결된 두 정점이 주어진다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                첫째 줄부터 N-1개의 줄에 각 노드의 부모 노드 번호를 2번 노드부터 순서대로 출력한다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            1이 최상위에 위치하고 2부터 N까지의 부모 노드를 출력해야하는 문제이다. <br>
+                            각 노드의 부모 노드를 저장할 배열을 만들고 BFS를 통해 부모 노드를 찾기로 했다. <br>
+                            <img style="height: 400px;" src="image/11725/11725_1.jpg"> <br>
+                            1이 최상위 부모 노드이므로 1부터 BFS 탐색을 시작하고 그 과정에서 탐색된 노드의 부모 노드는 1이 된다. <br>
+                            <img style="height: 400px;" src="image/11725/11725_2.jpg"> <br>
+                            1 노드의 탐색이 끝나면 탐색된 노드의 탐색을 시작한다. 이 과정을 반복하면 모든 노드의 부모 노드를 알 수 있게 된다. <br>
+                            <img style="height: 400px;" src="image/11725/11725_3.jpg"> <br>
+                            <img style="height: 400px;" src="image/11725/11725_4.jpg"> <br>
+                            모든 탐색이 끝나면 2부터 N까지의 부모 노드를 차례대로 출력한다.
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/3d7e0034c7955562e8f5a8221b206010.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/081ee7c6e2cc4c3f688a1dbbf50874bb.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/2817d5860bfc25c7e4ae26608d856da6.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/6a439dc8bde06275c6fb449266ce82fe.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/a8e040ce0d9efe98d21591b322ddb86a.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>
