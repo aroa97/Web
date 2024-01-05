@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Greedy</title>
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 10610. 30</div>
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/10610">https://www.acmicpc.net/problem/10610</a> <!-- 수정 -->
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                어느 날, 미르코는 우연히 길거리에서 양수 N을 보았다. 미르코는 30이란 수를 존경하기 때문에, 그는 길거리에서 찾은 수에 포함된 숫자들을 섞어 30의 배수가 되는 가장 큰 수를 만들고 싶어한다. <br> <br>
+
+                                미르코를 도와 그가 만들고 싶어하는 수를 계산하는 프로그램을 작성하라.
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                N을 입력받는다. N는 최대 10<sup>5</sup>개의 숫자로 구성되어 있으며, 0으로 시작하지 않는다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                미르코가 만들고 싶어하는 수가 존재한다면 그 수를 출력하라. 그 수가 존재하지 않는다면, -1을 출력하라.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            입력 데이터가 최대 10<sup>5</sup>개의 숫자로 구성되어 있으므로 int나 long의 범위로는 입력받을 수 없기 때문에 string(문자열) 데이터로서 받는다. <br>
+                            입력받은 데이터가 30의 배수인지 확인하기 위해서는 30 = 2 * 3 * 5 이므로 입력받은 데이터로 만든 수가 2의 배수여야 하고 동시에 3의 배수와 5의 배수여야 한다. <br> <br>
+                            각 수의 배수 조건은 다음과 같다. <br>
+                            <img style="height: 150px;" src="image/10610/10610_1.jpg"> <br> <br>
+                            이 조건을 압축하면 30의 배수가 될 조건은 1의 자리수가 0이여야 하며 모든 자리수의 합이 3으로 나누어져야 한다. <br>
+                            <img style="height: 150px;" src="image/10610/10610_2.jpg"> <br> <br>
+                            이 조건을 바탕으로 코드를 작성하고 답을 출력하면 된다.
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/5724d5cb4703ea03d50a6da072576d4a.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/bcf0b835ccc1081f0ee7d5be1bc7d99d.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/455192c9a30c4d78c6f1157aa5e4417a.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/49cecd7a1c4bab927dc0e7325106f45d.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/f037302c947cbea3b7429d0617ab65cf.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>

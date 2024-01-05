@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BruteFroce</title>
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 16945. 매직 스퀘어로 변경하기</div>
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/16945">https://www.acmicpc.net/problem/16945</a>
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                1부터 N<sup>2</sup>까지의 수가 하나씩 채워져 있는 크기가 N×N인 배열이 있고, 이 배열의 모든 행, 열, 길이가 N인 대각선의 합이 모두 같을 때, 매직 스퀘어라고 한다. <br> <br>
+
+                                크기가 3×3인 배열 A가 주어졌을 때, 이 배열을 매직 스퀘어로 변경하려고 한다. 한 칸에 있는 수 a를 b로 변경하는 비용은 |a - b| 이다. 예를 들어, 아래와 같은 경우를 살펴보자. <br> <br>
+                                5 3 4 <br>
+                                1 5 8 <br>
+                                6 4 2 <br> <br>
+                                이 배열의 수를 아래와 같이 변경하면 매직 스퀘어가 되고, 비용은 |5 - 8| + |8 - 9| + |4 - 7| = 7 이다. <br> <br>
+                                8 3 4 <br>
+                                1 5 9 <br>
+                                6 7 2 <br> <br>
+                                3×3 크기의 배열 A가 주어졌을 때, 이 배열을 매직 스퀘어로 변경하는 비용의 최솟값을 구해보자. 배열 A는 1부터 9까지의 수로만 채워져 있고, 매직 스퀘어로 변경한 배열도 1부터 9까지의 수로만 채워져 있어야 한다.
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                총 세 개의 줄에 걸쳐서 배열 A의 원소가 주어진다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                첫째 줄에 배열 A를 매직 스퀘어로 변경하는 비용의 최솟값을 출력한다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            문제 조건의 맞는 매직 스퀘어의 수는 8개로 다음과 같다. <br> <br>
+                            <img style="height: 250px;" src="image/16945/16945_1.jpg"> <img style="height: 250px;" src="image/16945/16945_2.jpg"> <br>
+                            <img style="height: 250px;" src="image/16945/16945_3.jpg"> <img style="height: 250px;" src="image/16945/16945_4.jpg"> <br> 
+                            <img style="height: 250px;" src="image/16945/16945_5.jpg"> <img style="height: 250px;" src="image/16945/16945_6.jpg"> <br> 
+                            <img style="height: 250px;" src="image/16945/16945_7.jpg"> <img style="height: 250px;" src="image/16945/16945_8.jpg"> <br> <br>
+                            이 8개의 매직 스퀘어를 배열로 만든 뒤 입력받은 데이터와 비교해 변경하는 비용의 최솟값을 찾아 답을 출력한다.
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/ef7e6ef9838590af8f9e52f6f941f732.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/8c056d19fded4eb9e20a95498c1b87a4.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/06c47b5132daaaac7e337b46ef4fbf1a.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/7c9650275e667297f77b8a011ae569a2.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>
