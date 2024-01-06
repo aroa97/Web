@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DynamicProgramming</title> 
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 9465. 스티커</div> 
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/9465">https://www.acmicpc.net/problem/9465</a> 
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                상근이의 여동생 상냥이는 문방구에서 스티커 2n개를 구매했다. 스티커는 그림 (a)와 같이 2행 n열로 배치되어 있다. 상냥이는 스티커를 이용해 책상을 꾸미려고 한다. <br> <br>
+
+                                상냥이가 구매한 스티커의 품질은 매우 좋지 않다. 스티커 한 장을 떼면, 그 스티커와 변을 공유하는 스티커는 모두 찢어져서 사용할 수 없게 된다. 즉, 뗀 스티커의 왼쪽, 오른쪽, 위, 아래에 있는 스티커는 사용할 수 없게 된다. <br> <br>
+
+                                <img style="height: 200px;" src="image/9465/9465_1.png"> <br>
+
+                                모든 스티커를 붙일 수 없게된 상냥이는 각 스티커에 점수를 매기고, 점수의 합이 최대가 되게 스티커를 떼어내려고 한다. 먼저, 그림 (b)와 같이 각 스티커에 점수를 매겼다. 상냥이가 뗄 수 있는 스티커의 점수의 최댓값을 구하는 프로그램을 작성하시오. 즉, 2n개의 스티커 중에서 점수의 합이 최대가 되면서 서로 변을 공유 하지 않는 스티커 집합을 구해야 한다. <br> <br>
+
+                                위의 그림의 경우에 점수가 50, 50, 100, 60인 스티커를 고르면, 점수는 260이 되고 이 것이 최대 점수이다. 가장 높은 점수를 가지는 두 스티커 (100과 70)은 변을 공유하기 때문에, 동시에 뗄 수 없다. <br> <br>
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스의 첫째 줄에는 n (1 ≤ n ≤ 100,000)이 주어진다. 다음 두 줄에는 n개의 정수가 주어지며, 각 정수는 그 위치에 해당하는 스티커의 점수이다. 연속하는 두 정수 사이에는 빈 칸이 하나 있다. 점수는 0보다 크거나 같고, 100보다 작거나 같은 정수이다. 
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                각 테스트 케이스 마다, 2n개의 스티커 중에서 두 변을 공유하지 않는 스티커 점수의 최댓값을 출력한다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            bottom-up 방식을 사용, 문제에서 주어진 조건을 따라서 답을 출력하기로 했다. <br>
+                            <img style="height: 400px;" src="image/9465/9465_2.jpg"> <br>
+                            현재 스티커를 떼어내는 것이 점수가 큰 지 안 떼어내는 것이 점수가 큰 지 비교 후 큰 값을 배열에 저장해 간다.  <br> <br>
+                            <img style="height: 400px;" src="image/9465/9465_3.jpg"> <br>
+                            스티커를 떼어내면 그 스티커와 변이 닿아 있는 스티커는 사용할 수 없으므로 현재 스티커에서 대각선에 위치한 스티커의 최댓값을 확인한다. <br> <br>
+                            <img style="height: 400px;" src="image/9465/9465_4.jpg"> <br>
+                            <img style="height: 400px;" src="image/9465/9465_5.jpg"> <br>
+                            현재 스티커를 떼는 것보다 현재 스티커 왼쪽에 위치한 스티커의 최댓값이 더 클 경우 그 값 그대로 저장한다. <br> <br>
+                            <img style="height: 400px;" src="image/9465/9465_6.jpg"> <br>
+                            지금까지 구한 수 중 가장 큰 수를 출력한다.
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/72ec1f026994e8424a7ef8c689c4be97.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/fb1116ea4226ea938479d5a2db110941.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/e9e0ae287dc1449df4820fb28cf47db3.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/cca6101bc3b294655a4bf3e184a2a183.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/90eaf5cfa9706efb2fca4886bcb29d9a.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>

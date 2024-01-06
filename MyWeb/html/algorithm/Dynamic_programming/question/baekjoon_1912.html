@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DynamicProgramming</title> 
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 1912. 연속합</div> 
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1912">https://www.acmicpc.net/problem/1912</a> 
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                n개의 정수로 이루어진 임의의 수열이 주어진다. 우리는 이 중 연속된 몇 개의 수를 선택해서 구할 수 있는 합 중 가장 큰 합을 구하려고 한다. 단, 수는 한 개 이상 선택해야 한다. <br> <br>
+
+                                예를 들어서 10, -4, 3, 1, 5, 6, -35, 12, 21, -1 이라는 수열이 주어졌다고 하자. 여기서 정답은 12+21인 33이 정답이 된다. 
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 정수 n(1 ≤ n ≤ 100,000)이 주어지고 둘째 줄에는 n개의 정수로 이루어진 수열이 주어진다. 수는 -1,000보다 크거나 같고, 1,000보다 작거나 같은 정수이다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                첫째 줄에 답을 출력한다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            임의의 순열의 연속된 수의 합 중 최댓값을 구하는 문제이다. <br>
+                            입력받은 데이터 순서대로 각 수를 포함하는 최댓값을 구해가면 그 중 가장 큰 수를 출력할 수 있다. <br>
+                            <img style="height: 200px;" src="image/1912/1912_1.jpg"> <br>
+                            처음 수의 경우 자신 밖에 없으므로 처음 수가 최댓값이 된다. <br>
+                            <img style="height: 200px;" src="image/1912/1912_2.jpg"> <br>
+                            그 다음 수부터는 그 전에 구한 최댓값에 자기 자신의 값을 더하는 게 큰 지 아니면 자기 자신의 값이 더 큰 지 비교한다. <br>
+                            <img style="height: 200px;" src="image/1912/1912_3.jpg"> <br>
+                            이런 식으로 수열의 끝까지 그 수의 최댓값을 구해간다. <br>
+                            <img style="height: 200px;" src="image/1912/1912_4.jpg"> <br>
+                            <img style="height: 200px;" src="image/1912/1912_5.jpg"> <br>
+                            구한 수 중 가장 큰 수를 출력한다.
+
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/efa3ec30be40815e43d6bf7306b2e659.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/175121650123bc669c4930f74fc6c892.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/1dfce1ed59031539f754428484c5b34e.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/14719f389277f81883d49fbf86baa0c9.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/96a0a3b66552b17a8e233f77037bd8aa.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>

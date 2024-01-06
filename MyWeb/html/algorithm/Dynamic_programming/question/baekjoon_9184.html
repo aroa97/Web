@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DynamicProgramming</title> 
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 9184. 신나는 함수 실행</div> 
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/9184">https://www.acmicpc.net/problem/9184</a> 
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                재귀 호출만 생각하면 신이 난다! 아닌가요? <br> <br>
+
+                                다음과 같은 재귀함수 w(a, b, c)가 있다. <br> <br>
+
+                                &nbsp; &nbsp; if a <= 0 or b <= 0 or c <= 0, then w(a, b, c) returns: <br>
+                                &nbsp; &nbsp; &nbsp; &nbsp; 1 <br> <br>
+
+                                &nbsp; &nbsp; if a > 20 or b > 20 or c > 20, then w(a, b, c) returns: <br>
+                                &nbsp; &nbsp; &nbsp; &nbsp; w(20, 20, 20) <br> <br>
+
+                                &nbsp; &nbsp; if a < b and b < c, then w(a, b, c) returns: <br>
+                                &nbsp; &nbsp; &nbsp; &nbsp; w(a, b, c-1) + w(a, b-1, c-1) - w(a, b-1, c) <br> <br>
+
+                                &nbsp; &nbsp; otherwise it returns: <br>
+                                &nbsp; &nbsp; &nbsp; &nbsp; w(a-1, b, c) + w(a-1, b-1, c) + w(a-1, b, c-1) - w(a-1, b-1, c-1) <br> <br>
+                                
+                                위의 함수를 구현하는 것은 매우 쉽다. 하지만, 그대로 구현하면 값을 구하는데 매우 오랜 시간이 걸린다. (예를 들면, a=15, b=15, c=15) <br> <br>
+
+                                a, b, c가 주어졌을 때, w(a, b, c)를 출력하는 프로그램을 작성하시오. <br> <br>
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                입력은 세 정수 a, b, c로 이루어져 있으며, 한 줄에 하나씩 주어진다. 입력의 마지막은 -1 -1 -1로 나타내며, 세 정수가 모두 -1인 경우는 입력의 마지막을 제외하면 없다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                입력으로 주어진 각각의 a, b, c에 대해서, w(a, b, c)를 출력한다.
+                            </li>
+                            <li>
+                                <h3>제한 :</h3>
+                                &nbsp; &nbsp; ● -50 ≤ a, b, c ≤ 50
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            입력받을 때마다 계산을 할 경우 효율적이지 않다고 생각해 미리 모든 경우의 수를 구해 해당하는 값을 출력하는 코드를 작성하기로 했다. <br>
+                            재귀함수(top-down)를 사용해도 되지만  bottom-up 방식으로 문제를 풀어보기로 했다. <br>
+                            a, b, c의 범위가 -50이상 50이하지만 재귀함수의 조건을 보면 0이상 20이하의 범위일 경우의 수만을 계산해서 출력해도 된다. <br>
+                            a, b, c 중 하나라도 0이하이면 값은 1이므로 배열에 0을 포함하는 모든 경우의 수에 1값을 넣는다. <br>
+                            문제에서 주어진 점화식을 사용해 반복문을 작성, 입력받은 데이터를 바탕으로 답을 출력한다.
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/53ecd15ab730d2dba9386286d6549f7c.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/3c094a41a63e5e059f28671dedfddf96.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/836bde76a7b449972b27ea8886b7e656.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/ed09e590e0f2c47d9daca06c6288100f.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/50108403f49d08e44e04c7bcaf9ef94e.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>

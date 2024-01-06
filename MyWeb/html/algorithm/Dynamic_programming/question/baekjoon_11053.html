@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DynamicProgramming</title> 
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 11053. 가장 긴 증가하는 부분 수열</div> 
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/11053">https://www.acmicpc.net/problem/11053</a> 
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                수열 A가 주어졌을 때, 가장 긴 증가하는 부분 수열을 구하는 프로그램을 작성하시오. <br> <br>
+
+                                예를 들어, 수열 A = {10, 20, 10, 30, 20, 50} 인 경우에 가장 긴 증가하는 부분 수열은 A = {10, 20, 10, 30, 20, 50} 이고, 길이는 4이다.
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 수열 A의 크기 N (1 ≤ N ≤ 1,000)이 주어진다. <br> <br>
+
+                                둘째 줄에는 수열 A를 이루고 있는 Ai가 주어진다. (1 ≤ Ai ≤ 1,000)
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                첫째 줄에 수열 A의 가장 긴 증가하는 부분 수열의 길이를 출력한다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            bottom-up 방식을 사용했으며 현재 수를 포함하여 현재 수까지 가장 긴 부분 수열의 길이를 배열에 저장해간다.<br>
+                            <img style="height: 300px;" src="image/11053/11053_1.jpg"> <br>
+                            현재 수 10까지 가장 긴 부분 수열은 10밖에 없으므로 1이 된다. <br> <br>
+                            <img style="height: 300px;" src="image/11053/11053_2.jpg"> <br>
+                            이전 수들을 확인했을 때 현재 수 20보다 작은 수들 중 가장 긴 부분 수열의 길이는 1이므로 현재 수 20까지 가장 긴 부분 수열의 길이는 2다. <br> <br>
+                            <img style="height: 300px;" src="image/11053/11053_3.jpg"> <br>
+                            이전 수들을 확인했을 때 현재 수 10보다 작은 수는 없으므로 현재 수 10을 포함한 가장 긴 부분 수열의 길이는 1이 된다. <br> 
+                            이런 과정을 반복했을 때 가장 긴 부분 수열의 길이를 출력할 수 있다.<br> <br>
+                            <img style="height: 300px;" src="image/11053/11053_4.jpg"> <br>
+                            <img style="height: 300px;" src="image/11053/11053_5.jpg"> <br>
+                            <img style="height: 300px;" src="image/11053/11053_6.jpg"> <br>
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/25d68b820398d580cbea1d19808d0a90.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/84ed2207a26e4b65e1a6dd1956d6a365.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/a89009f4af3db04d19d7aa7638c3da0d.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/0b68eaf1e3bbd63986d1ca4c2b552511.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/ed30de66abe79b0071671bcec13d0937.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>
