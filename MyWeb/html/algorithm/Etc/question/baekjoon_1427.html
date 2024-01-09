@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Implementation</title>
+        <title>Etc</title>
         <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
         <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
         <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
@@ -32,48 +32,41 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 16917. 양념 반 후라이드 반 </div> 
+                    <div class="algorithm_title">백준 1427. 소트인사이드</div>
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/16917">https://www.acmicpc.net/problem/16917</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1427">https://www.acmicpc.net/problem/1427</a>
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                현진 치킨에서 판매하는 치킨은 양념 치킨, 후라이드 치킨, 반반 치킨으로 총 세 종류이다. 반반 치킨은 절반은 양념 치킨, 절반은 후라이드 치킨으로 이루어져있다. 양념 치킨 한 마리의 가격은 A원, 후라이드 치킨 한 마리의 가격은 B원, 반반 치킨 한 마리의 가격은 C원이다.
-
-                                상도는 오늘 파티를 위해 양념 치킨 최소 X마리, 후라이드 치킨 최소 Y마리를 구매하려고 한다. 반반 치킨을 두 마리 구입해 양념 치킨 하나와 후라이드 치킨 하나를 만드는 방법도 가능하다. 상도가 치킨을 구매하는 금액의 최솟값을 구해보자.
+                                배열을 정렬하는 것은 쉽다. 수가 주어지면, 그 수의 각 자리수를 내림차순으로 정렬해보자.
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 다섯 정수 A, B, C, X, Y가 주어진다.
+                                첫째 줄에 정렬하려고 하는 수 N이 주어진다. N은 1,000,000,000보다 작거나 같은 자연수이다.
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                양념 치킨 최소 X마리, 후라이드 치킨 최소 Y마리를 구매하는 비용의 최솟값을 출력한다.
+                                첫째 줄에 자리수를 내림차순으로 정렬한 수를 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            양념 치킨(A), 후라이드 치킨(B)을 더한 값이 양념 반 후라이드 반(C) 2마리 값보다 작을 경우 양념 치킨(A) X마리 값, 후라이드 치킨(B) Y마리 값을 더한 값을 출력. <br> <br>
-                            <img style="height: 200px;" src="image/16917/16917_1.jpg"> <br> <br>
-                            아닐 경우 양념 반 후라이드 반(C) 2마리 값이 더 싸기 때문에 X와 Y값을 비교 <br> 
-                            &nbsp; ○ X값이 작을 경우 후라이드 치킨(B) 값이랑 양념 반 후라이드 반(C) 2마리 값이랑 비교 <br> 
-                            &nbsp; &nbsp; ● 후라이드 치킨(B) 값이 작을 경우 X값이 될 만큼 양념 반 후라이드 반 치킨(C)를 구매( X * (2 * C) )하고 나머지 사야하는 후라이드 치킨 개수(Y - X)만큼 후라이드 치킨을 구매( B * (Y - X) ), 이걸 합친 값을 출력. <br>
-                            &nbsp; &nbsp; ● 양념 반 후라이드 반(C) 2마리 값이 작을 경우 양념 반 후라이드 반(C)을 Y마리만큼 구매( Y * 2 * C )한 값을 출력 <br> <br>
-                            &nbsp; ○ Y값이 작을 경우 양념 치킨(A) 값이랑 양념 반 후라이드 반(C) 2마리 값이랑 비교 <br>
-                            &nbsp; &nbsp; ● 양념 치킨(B) 값이 작을 경우 Y값이 될 만큼 양념 반 후라이드 반 치킨(C)를 구매( Y * (2 * C) )하고 나머지 사야하는 양념 치킨 개수(X - Y)만큼 후라이드 치킨을 구매( A * (X - Y) ), 이걸 합친 값을 출력. <br>
-                            &nbsp; &nbsp; ● 양념 반 후라이드 반(C) 2마리 값이 작을 경우 양념 반 후라이드 반(C)을 X마리만큼 구매( X * 2 * C )한 값을 출력 <br> <br>
-                            (최소 금액을 출력하는 것이 정답이기 때문에 기존 개수(X, Y)보다 더 사도 된다) <br> <br>
-                            <img style="height: 300px;" src="image/16917/16917_2.jpg"> <br> <br>
+                            0~9까지 저장할 배열을 만든 뒤 0으로 초기화한다. <br>
+                            입력받은 수의 각 자릿수에 해당하는 수를 세서 배열에 저장한다. <br>
+                            <img style="height: 300px;" src="image/1427/1427_1.jpg"> <br> <br> 
+                            9부터 시작해서 0까지 해당 숫자가 사용된 개수만큼 하나씩 출력한다. 
+                            <img style="height: 300px;" src="image/1427/1427_2.jpg">
                         </li>
                     </ul>
                     <div class="languagebox">
                         <label for="c++"> C++ </label>
                         <label for="csharp"> C# </label>
                         <label for="java"> Java </label>
+                        <label style="padding-top: 10px;"  for="javascript"> Java<br>Script </label>
                         <label for="kotlin"> Kotlin </label> 
                         <label for="python"> Python </label>
                     </div>
@@ -81,31 +74,37 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/1bcaab3a3a6e1f8e8b3ef14e7be99bd2.js"></script>
+                        <script src="https://gist.github.com/aroa97/2092823846876f2503e3d9615eb34497.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/dbdfa4e9ed43c43d66ddae0d5148483d.js"></script>
+                        <script src="https://gist.github.com/aroa97/db247ac30f58c3a12f159ccd0118f85e.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/62897b96ad521fc1a7abb89df44f5e7c.js"></script>
+                        <script src="https://gist.github.com/aroa97/0c2c10fa37506deac09a4a90fe02e997.js"></script>
+                    </div>
+
+                    <input type="radio" id="javascript" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/javascript.png">
+                        <script src="https://gist.github.com/aroa97/9f2e287a5d9904cc5cc2410e35a1c7b2.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/098a074c9f81400be3b0a85fadda475c.js"></script>
+                        <script src="https://gist.github.com/aroa97/7348d014aeae5dc90b1ae172568a6935.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/5c005dddea79e7bd46221ea90fbefa8b.js"></script>
+                        <script src="https://gist.github.com/aroa97/2cadb915987630d827d7c53e191dda64.js"></script>
                     </div>
                     
                 </article>

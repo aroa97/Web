@@ -32,48 +32,46 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 16917. 양념 반 후라이드 반 </div> 
+                    <div class="algorithm_title">백준 1475. 방 번호 </div> 
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/16917">https://www.acmicpc.net/problem/16917</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1475">https://www.acmicpc.net/problem/1475</a>
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                현진 치킨에서 판매하는 치킨은 양념 치킨, 후라이드 치킨, 반반 치킨으로 총 세 종류이다. 반반 치킨은 절반은 양념 치킨, 절반은 후라이드 치킨으로 이루어져있다. 양념 치킨 한 마리의 가격은 A원, 후라이드 치킨 한 마리의 가격은 B원, 반반 치킨 한 마리의 가격은 C원이다.
+                                다솜이는 은진이의 옆집에 새로 이사왔다. 다솜이는 자기 방 번호를 예쁜 플라스틱 숫자로 문에 붙이려고 한다. <br> <br>
 
-                                상도는 오늘 파티를 위해 양념 치킨 최소 X마리, 후라이드 치킨 최소 Y마리를 구매하려고 한다. 반반 치킨을 두 마리 구입해 양념 치킨 하나와 후라이드 치킨 하나를 만드는 방법도 가능하다. 상도가 치킨을 구매하는 금액의 최솟값을 구해보자.
+                                다솜이의 옆집에서는 플라스틱 숫자를 한 세트로 판다. 한 세트에는 0번부터 9번까지 숫자가 하나씩 들어있다. 다솜이의 방 번호가 주어졌을 때, 필요한 세트의 개수의 최솟값을 출력하시오. (6은 9를 뒤집어서 이용할 수 있고, 9는 6을 뒤집어서 이용할 수 있다.)
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 다섯 정수 A, B, C, X, Y가 주어진다.
+                                첫째 줄에 다솜이의 방 번호 N이 주어진다. N은 1,000,000보다 작거나 같은 자연수이다.
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                양념 치킨 최소 X마리, 후라이드 치킨 최소 Y마리를 구매하는 비용의 최솟값을 출력한다.
+                                첫째 줄에 필요한 세트의 개수를 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            양념 치킨(A), 후라이드 치킨(B)을 더한 값이 양념 반 후라이드 반(C) 2마리 값보다 작을 경우 양념 치킨(A) X마리 값, 후라이드 치킨(B) Y마리 값을 더한 값을 출력. <br> <br>
-                            <img style="height: 200px;" src="image/16917/16917_1.jpg"> <br> <br>
-                            아닐 경우 양념 반 후라이드 반(C) 2마리 값이 더 싸기 때문에 X와 Y값을 비교 <br> 
-                            &nbsp; ○ X값이 작을 경우 후라이드 치킨(B) 값이랑 양념 반 후라이드 반(C) 2마리 값이랑 비교 <br> 
-                            &nbsp; &nbsp; ● 후라이드 치킨(B) 값이 작을 경우 X값이 될 만큼 양념 반 후라이드 반 치킨(C)를 구매( X * (2 * C) )하고 나머지 사야하는 후라이드 치킨 개수(Y - X)만큼 후라이드 치킨을 구매( B * (Y - X) ), 이걸 합친 값을 출력. <br>
-                            &nbsp; &nbsp; ● 양념 반 후라이드 반(C) 2마리 값이 작을 경우 양념 반 후라이드 반(C)을 Y마리만큼 구매( Y * 2 * C )한 값을 출력 <br> <br>
-                            &nbsp; ○ Y값이 작을 경우 양념 치킨(A) 값이랑 양념 반 후라이드 반(C) 2마리 값이랑 비교 <br>
-                            &nbsp; &nbsp; ● 양념 치킨(B) 값이 작을 경우 Y값이 될 만큼 양념 반 후라이드 반 치킨(C)를 구매( Y * (2 * C) )하고 나머지 사야하는 양념 치킨 개수(X - Y)만큼 후라이드 치킨을 구매( A * (X - Y) ), 이걸 합친 값을 출력. <br>
-                            &nbsp; &nbsp; ● 양념 반 후라이드 반(C) 2마리 값이 작을 경우 양념 반 후라이드 반(C)을 X마리만큼 구매( X * 2 * C )한 값을 출력 <br> <br>
-                            (최소 금액을 출력하는 것이 정답이기 때문에 기존 개수(X, Y)보다 더 사도 된다) <br> <br>
-                            <img style="height: 300px;" src="image/16917/16917_2.jpg"> <br> <br>
+                            입력받은 방 번호를 만들기 위해서 필요한 세트의 최소값을 구하는 문제이다. <br>
+                            단순하게 생각하면 가장 많이 사용한 숫자의 개수만큼 세트를 준비하면 되지만 문제에서 6은 9로도 사용할 수 있고 반대도 가능하다고 한다. 때문에 6과 9의 경우 다른 숫자랑 다르게 더 적은 세트 수로 대체할 수 있다. <br>
+                            입력받은 데이터를 바탕으로 각 숫자가 쓰인 개수를 센다. <br>
+                            센 수를 이용해 어떤 숫자가 가장 많이 쓰였는 지를 판단한다. 이 때 6과 9의 경우는 두 숫자가 쓰인 개수를 합한 후 2로 나눈 뒤 나머지가 존재할 경우 1을 더하고 다 계산한 뒤의 값을 다른 숫자와 비교한다. <br>
+                            <img style="height: 300px;" src="image/1475/1475_1.jpg"> <br> <br>
+                            <img style="height: 300px;" src="image/1475/1475_2.jpg"> <br> <br>
+                            <img style="height: 300px;" src="image/1475/1475_3.jpg"> <br>
+                            비교하는 작업이 완료되면 이 과정을 통해 구한 값을 출력한다.
                         </li>
                     </ul>
                     <div class="languagebox">
                         <label for="c++"> C++ </label>
                         <label for="csharp"> C# </label>
                         <label for="java"> Java </label>
+                        <label style="padding-top: 10px;"  for="javascript"> Java<br>Script </label>
                         <label for="kotlin"> Kotlin </label> 
                         <label for="python"> Python </label>
                     </div>
@@ -81,31 +79,37 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/1bcaab3a3a6e1f8e8b3ef14e7be99bd2.js"></script>
+                        <script src="https://gist.github.com/aroa97/c2244ab303f46b71b221be9ab658b415.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/dbdfa4e9ed43c43d66ddae0d5148483d.js"></script>
+                        <script src="https://gist.github.com/aroa97/569e344a72216b93f80a63e665be2eb3.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/62897b96ad521fc1a7abb89df44f5e7c.js"></script>
+                        <script src="https://gist.github.com/aroa97/4f0ceca1b7eebd6f4e3879261f67cc97.js"></script>
+                    </div>
+
+                    <input type="radio" id="javascript" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/javascript.png">
+                        <script src="https://gist.github.com/aroa97/7c8d0da23014ba96be19e097ddb593c8.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/098a074c9f81400be3b0a85fadda475c.js"></script>
+                        <script src="https://gist.github.com/aroa97/125e06e8538b4eacde6fdf1462c727ed.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/5c005dddea79e7bd46221ea90fbefa8b.js"></script>
+                        <script src="https://gist.github.com/aroa97/33ad842de863b2c000aee565ff3087d3.js"></script>
                     </div>
                     
                 </article>

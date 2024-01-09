@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Implementation</title>
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 1913. 달팽이 </div> 
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1913">https://www.acmicpc.net/problem/1913</a>
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                홀수인 자연수 N이 주어지면, 다음과 같이 1부터 N2까지의 자연수를 달팽이 모양으로 N×N의 표에 채울 수 있다. <br> <br>
+
+                                <table>
+                                    <tr>
+                                        <td style="padding: 2px;">9</td>
+                                        <td style="padding: 2px;">2</td>
+                                        <td style="padding: 2px;">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 2px;">8</td>
+                                        <td style="padding: 2px;">1</td>
+                                        <td style="padding: 2px;">4</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 2px;">7</td>
+                                        <td style="padding: 2px;">6</td>
+                                        <td style="padding: 2px;">5</td>
+                                    </tr>
+                                </table> <br>
+
+                                <table style="text-align: center;">
+                                    <tr>
+                                        <td style="padding: 2px;">25</td>
+                                        <td style="padding: 2px;">10</td>
+                                        <td style="padding: 2px;">11</td>
+                                        <td style="padding: 2px;">12</td>
+                                        <td style="padding: 2px;">13</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 2px;">24</td>
+                                        <td style="padding: 2px;">9</td>
+                                        <td style="padding: 2px;">2</td>
+                                        <td style="padding: 2px;">3</td>
+                                        <td style="padding: 2px;">14</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 2px;">23</td>
+                                        <td style="padding: 2px;">8</td>
+                                        <td style="padding: 2px;">1</td>
+                                        <td style="padding: 2px;">4</td>
+                                        <td style="padding: 2px;">15</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 2px;">22</td>
+                                        <td style="padding: 2px;">7</td>
+                                        <td style="padding: 2px;">6</td>
+                                        <td style="padding: 2px;">5</td>
+                                        <td style="padding: 2px;">16</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 2px;">21</td>
+                                        <td style="padding: 2px;">20</td>
+                                        <td style="padding: 2px;">19</td>
+                                        <td style="padding: 2px;">18</td>
+                                        <td style="padding: 2px;">17</td>
+                                    </tr>
+                                </table> <br>
+
+                                N이 주어졌을 때, 이러한 표를 출력하는 프로그램을 작성하시오. 또한 N2 이하의 자연수가 하나 주어졌을 때, 그 좌표도 함께 출력하시오. 예를 들어 N=5인 경우 6의 좌표는 (4,3)이다.
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 홀수인 자연수 N(3 ≤ N ≤ 999)이 주어진다. 둘째 줄에는 위치를 찾고자 하는 N2 이하의 자연수가 하나 주어진다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                N개의 줄에 걸쳐 표를 출력한다. 각 줄에 N개의 자연수를 한 칸씩 띄어서 출력하면 되며, 자릿수를 맞출 필요가 없다. N+1번째 줄에는 입력받은 자연수의 좌표를 나타내는 두 정수를 한 칸 띄어서 출력한다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            중앙에 있는 1 기준으로 왼쪽 위로 향하는 대각선에 위치한 수는 홀수의 제곱수이다. <br>
+                            <img style="height: 400px;" src="image/1913/1913_1.jpg"> <br>
+                            이 점을 이용해서 숫자를 채워가기로 했다. <br> <br>
+
+                            왼쪽 위 대각선을 기준으로 다음 그림과 같은 방향으로 차례대로 값을 구하기로 했다. <br> 
+                            <img style="height: 400px;" src="image/1913/1913_2.jpg"> <br> <br>
+
+                            각 제곱수를 기준으로 아래로 내려갈수록 1씩 값이 감소하므로 차례대로 값을 저장한다. <br>
+                            <img style="height: 400px;" src="image/1913/1913_3.jpg"> <br> <br>
+
+                            그 과정에서 구한 마지막 값을 기준으로 오른쪽으로 갈수록 1씩 값이 감소하므로 차례대로 값을 저장한다. <br>
+                            <img style="height: 400px;" src="image/1913/1913_4.jpg"> <br> <br>
+
+                            동일하게 구한 마지막 값을 기준으로 위로 올라갈수록 1씩 값이 감소하므로 차례대로 값을 저장한다. <br>
+                            <img style="height: 400px;" src="image/1913/1913_5.jpg"> <br> <br>
+
+                            마지막으로 구한 마지막 값을 기준으로 왼쪽으로 갈수록 1씩 값이 감소하므로 차례대로 값을 저장한다. <br>
+                            <img style="height: 400px;" src="image/1913/1913_6.jpg"> <br> <br>
+
+                            이 과정에서 값을 저장할 때 입력받은 값과 동일한 값이 나올 경우 좌표를 따로 저장해둔다. <br>
+                            <img style="height: 400px;" src="image/1913/1913_7.jpg"> <br> <br>
+                            답을 출력하기 위해 필요한 과정을 모두 마쳤기 때문에 구한 값들을 출력한다.
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label style="padding-top: 10px;"  for="javascript"> Java<br>Script </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/23b5c6d6487ee4237c99ad3989d71148.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/3f30ddba6702df818645d0e956f8183f.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/14d3f49c0a7dc0fad6b376f9f7e133c7.js"></script>
+                    </div>
+
+                    <input type="radio" id="javascript" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/javascript.png">
+                        <script src="https://gist.github.com/aroa97/a38bb7acfaf95c07b2cefd83fa543984.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/acf4f7534f9a1234659f2b2c9cc3fda0.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/ff4bc170f4b7749f6830308e0453c5b7.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>
