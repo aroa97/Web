@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Implementation</title>
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 13015. 별 찍기 - 23 </div> 
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/13015">https://www.acmicpc.net/problem/13015</a>
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                예제를 보고 규칙을 유추한 뒤에 별을 찍어 보세요.
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 N(2 ≤ N ≤ 100)이 주어진다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                규칙대로 별을 출력한다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            문제의 예제는 다음과 같다. <br>
+                            <img style="height: 250px;" src="image/13015/13015_1.jpg"> <br>
+                            <img style="height: 500px;" src="image/13015/13015_2.jpg"> <br> <br>
+
+                            우선 X자 모양의 위와 아래에 N의 값과 같은 수의 별이 찍혀있다. <br>
+                            <img style="height: 500px;" src="image/13015/13015_3.jpg"> <br> <br>
+
+                            가운데 맨 위에는 N * 2 - 3만큼의 빈칸이 있으며 행이 증가할수록 2개씩 적어지고 있다. <br>
+                            <img style="height: 500px;" src="image/13015/13015_4.jpg"> <br> <br>
+
+                            왼쪽 두번째 줄부터는 빈칸이 하나씩 증가하고 있다. <br>
+                            <img style="height: 500px;" src="image/13015/13015_5.jpg"> <br> <br>
+
+                            빈칸 다음 N 값만큼의 공간에는 처음과 끝에 별이 찍혀있으며 N - 2 만큼의 빈칸이 두개있다. <br>
+                            <img style="height: 500px;" src="image/13015/13015_6.jpg"> <br> <br>
+
+                            가운데는 겹치는 부분이 생기므로 주의한다. <br>
+                            <img style="height: 500px;" src="image/13015/13015_7.jpg"> <br> <br>
+
+                            이러한 규칙을 신경쓰면서 코드를 작성, 밑의 나머지 부분은 빈칸의 규칙을 거꾸로 적용하면 된다.
+                            <img style="height: 500px;" src="image/13015/13015_8.jpg">
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label style="padding-top: 10px;"  for="javascript"> Java<br>Script </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/8c997a940c916234eb601d2b3880d896.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/f34a479a6b2f42875aa23539d5a1bebc.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/c9587c6a711cd62311ed52811d8f399a.js"></script>
+                    </div>
+
+                    <input type="radio" id="javascript" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/javascript.png">
+                        <script src="https://gist.github.com/aroa97/01a1551d563f946332f886f75fd6d958.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/8bd13f5feaf531be025be25f7c08c2c8.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/d790962c15ecc25dda778442d523fd0e.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>
