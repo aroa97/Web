@@ -32,50 +32,49 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 13015. 별 찍기 - 23 </div> 
+                    <div class="algorithm_title">백준 1138. 한 줄로 서기 </div> 
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/13015">https://www.acmicpc.net/problem/13015</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1138">https://www.acmicpc.net/problem/1138</a>
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                예제를 보고 규칙을 유추한 뒤에 별을 찍어 보세요.
+                                N명의 사람들은 매일 아침 한 줄로 선다. 이 사람들은 자리를 마음대로 서지 못하고 오민식의 지시대로 선다. <br> <br>
+
+                                어느 날 사람들은 오민식이 사람들이 줄 서는 위치를 기록해 놓는다는 것을 알았다. 그리고 아침에 자기가 기록해 놓은 것과 사람들이 줄을 선 위치가 맞는지 확인한다. <br> <br>
+                                
+                                사람들은 자기보다 큰 사람이 왼쪽에 몇 명 있었는지만을 기억한다. N명의 사람이 있고, 사람들의 키는 1부터 N까지 모두 다르다. <br> <br>
+                                
+                                각 사람들이 기억하는 정보가 주어질 때, 줄을 어떻게 서야 하는지 출력하는 프로그램을 작성하시오.
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 N(2 ≤ N ≤ 100)이 주어진다.
+                                첫째 줄에 사람의 수 N이 주어진다. N은 10보다 작거나 같은 자연수이다. 둘째 줄에는 키가 1인 사람부터 차례대로 자기보다 키가 큰 사람이 왼쪽에 몇 명이 있었는지 주어진다. i번째 수는 0보다 크거나 같고, N-i보다 작거나 같다. i는 0부터 시작한다.
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                규칙대로 별을 출력한다.
+                                첫째 줄에 줄을 선 순서대로 키를 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            문제의 예제는 다음과 같다. <br>
-                            <img style="height: 250px;" src="image/13015/13015_1.jpg"> <br>
-                            <img style="height: 500px;" src="image/13015/13015_2.jpg"> <br> <br>
+                            1부터 N까지 차례대로 서 있는 위치를 구한다. <br> 
+                            기본적으로 입력받은 데이터 값 + 1을 위치로 잡고 거기에 사람이 있을 경우 빈 곳이 나올 때까지 뒤로 가면 된다. <br> <br>
 
-                            우선 X자 모양의 위와 아래에 N의 값과 같은 수의 별이 찍혀있다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_3.jpg"> <br> <br>
+                            <img style="height: 250px;" src="image/1138/1138_1.jpg"> <br>
+                            1보다 작은 수는 없으므로 1의 위치는 입력받은 데이터 값 + 1이 될 것이다. <br> <br>
 
-                            가운데 맨 위에는 N * 2 - 3만큼의 빈칸이 있으며 행이 증가할수록 2개씩 적어지고 있다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_4.jpg"> <br> <br>
+                            <img style="height: 250px;" src="image/1138/1138_2.jpg"> <br>
+                            1의 위치를 정했으므로 그 다음 2의 경우 2보다 작은 수는 없으므로 앞에 1이 없는 이상 2의 위치는 입력받은 데이터 값 + 1이 될 것이다. <br> <br>
 
-                            왼쪽 두번째 줄부터는 빈칸이 하나씩 증가하고 있다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_5.jpg"> <br> <br>
+                            <img style="height: 250px;" src="image/1138/1138_3.jpg"> <br>
+                            3의 위치를 정해야 하는 데 입력받은 데이터 값 + 1의 위치에는 이미 줄 서 있는 사람이 있으므로 빈 곳이 나올 때까지 뒤로 간다. 빈 곳이 나오면 거기가 3의 위치이다. <br> <br>
 
-                            빈칸 다음 N 값만큼의 공간에는 처음과 끝에 별이 찍혀있으며 N - 2 만큼의 빈칸이 있다. 이러한 모양이 왼쪽, 오른쪽 하나씩 있다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_6.jpg"> <br> <br>
-
-                            가운데는 별이 겹치는 부분이 생겨서 별이 3개다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_7.jpg"> <br> <br>
-
-                            이러한 규칙을 신경쓰면서 코드를 작성, 밑의 나머지 부분은 빈칸의 규칙을 거꾸로 적용하면 된다.
-                            <img style="height: 500px;" src="image/13015/13015_8.jpg">
+                            <img style="height: 250px;" src="image/1138/1138_4.jpg"> <br>
+                            마지막 수의 경우 남은 빈 곳이 마지막 수의 위치가 될 것이다. <br> <br>
                         </li>
                     </ul>
                     <div class="languagebox">
@@ -90,37 +89,37 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/8c997a940c916234eb601d2b3880d896.js"></script>
+                        <script src="https://gist.github.com/aroa97/8b9cec7648777ae4d46a6fb9d1bfb77e.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/f34a479a6b2f42875aa23539d5a1bebc.js"></script>
+                        <script src="https://gist.github.com/aroa97/58f67deb23a5315470bc3dc147dae334.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/c9587c6a711cd62311ed52811d8f399a.js"></script>
+                        <script src="https://gist.github.com/aroa97/e7e5bf28e343bf68ab52f0575dc8f013.js"></script>
                     </div>
 
                     <input type="radio" id="javascript" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/javascript.png">
-                        <script src="https://gist.github.com/aroa97/01a1551d563f946332f886f75fd6d958.js"></script>
+                        <script src="https://gist.github.com/aroa97/b15d15b80c1633ef598d5758d8851973.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/8bd13f5feaf531be025be25f7c08c2c8.js"></script>
+                        <script src="https://gist.github.com/aroa97/bd25c64911f4ca4da480e4474e9d676b.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/d790962c15ecc25dda778442d523fd0e.js"></script>
+                        <script src="https://gist.github.com/aroa97/da862a0563af4b7cde74f2273835e8ba.js"></script>
                     </div>
                     
                 </article>
