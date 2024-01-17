@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Etc</title>
+        <title>BinarySearch</title>
         <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
         <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
         <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
@@ -32,37 +32,44 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 4344. 평균은 넘겠지</div>
+                    <div class="algorithm_title">백준 1654. 랜선 자르기</div>
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/4344">https://www.acmicpc.net/problem/4344</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1654">https://www.acmicpc.net/problem/1654</a>
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                대학생 새내기들의 90%는 자신이 반에서 평균은 넘는다고 생각한다. 당신은 그들에게 슬픈 진실을 알려줘야 한다.
+                                집에서 시간을 보내던 오영식은 박성원의 부름을 받고 급히 달려왔다. 박성원이 캠프 때 쓸 N개의 랜선을 만들어야 하는데 너무 바빠서 영식이에게 도움을 청했다. <br> <br>
+
+                                이미 오영식은 자체적으로 K개의 랜선을 가지고 있다. 그러나 K개의 랜선은 길이가 제각각이다. 박성원은 랜선을 모두 N개의 같은 길이의 랜선으로 만들고 싶었기 때문에 K개의 랜선을 잘라서 만들어야 한다. 예를 들어 300cm 짜리 랜선에서 140cm 짜리 랜선을 두 개 잘라내면 20cm는 버려야 한다. (이미 자른 랜선은 붙일 수 없다.) <br> <br>
+                                
+                                편의를 위해 랜선을 자르거나 만들 때 손실되는 길이는 없다고 가정하며, 기존의 K개의 랜선으로 N개의 랜선을 만들 수 없는 경우는 없다고 가정하자. 그리고 자를 때는 항상 센티미터 단위로 정수길이만큼 자른다고 가정하자. N개보다 많이 만드는 것도 N개를 만드는 것에 포함된다. 이때 만들 수 있는 최대 랜선의 길이를 구하는 프로그램을 작성하시오.
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에는 테스트 케이스의 개수 C가 주어진다. <br> <br>
-
-                                둘째 줄부터 각 테스트 케이스마다 학생의 수 N(1 ≤ N ≤ 1000, N은 정수)이 첫 수로 주어지고, 이어서 N명의 점수가 주어진다. 점수는 0보다 크거나 같고, 100보다 작거나 같은 정수이다.
+                                첫째 줄에는 오영식이 이미 가지고 있는 랜선의 개수 K, 그리고 필요한 랜선의 개수 N이 입력된다. K는 1이상 10,000이하의 정수이고, N은 1이상 1,000,000이하의 정수이다. 그리고 항상 K ≦ N 이다. 그 후 K줄에 걸쳐 이미 가지고 있는 각 랜선의 길이가 센티미터 단위의 정수로 입력된다. 랜선의 길이는 2<sup>31</sup>-1보다 작거나 같은 자연수이다.
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                각 케이스마다 한 줄씩 평균을 넘는 학생들의 비율을 반올림하여 소수점 셋째 자리까지 출력한다. 정답과 출력값의 절대/상대 오차는 10-3이하이면 정답이다.
+                                첫째 줄에 N개를 만들 수 있는 랜선의 최대 길이를 센티미터 단위의 정수로 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            각 테스트 케이스를 입력받을 때 학생 수와 각 학생의 점수를 변수에 저장해둔다. 동시에 학생의 점수 총합을 구한다. <br> <br>
-                            <img style="height: 200px;" src="image/4344/4344_1.jpg"> <br> <br>
-                            점수 총합과 학생 수로 평균을 구한 후 저장해둔 각 학생들의 점수와 비교한다. <br>
-                            <img style="height: 300px;" src="image/4344/4344_2.jpg"> <br> <br>
-                            평균을 넘는 학생의 점수만 세서 평균을 넘는 학생들의 비율을 구한 후 문제에서 원하는 답의 형태로 출력한다. <br> <br>
-                            <img style="height: 200px;" src="image/4344/4344_3.jpg">
+                            랜선의 최솟값과 최댓값을 설정하고 그 사이의 임의의 값을 설정하고 비교하면서 범위를 좁혀간다. <br>
+                            최솟값을 0으로 최댓값은 입력받은 데이터 중 가장 큰 값으로 설정한다. <br> <br>
+
+                            <img style="height: 300px;" src="image/1654/1654_1.jpg"> <br>
+                            최솟값과 최댓값의 중간값을 이용해 만들 있는 랜선의 개수를 구한다. <br> <br>
+
+                            <img style="height: 300px;" src="image/1654/1654_2.jpg"> <br>
+                            랜선의 개수가 N보다 많을 경우 최솟값을 중간값으로 변경, 랜선의 개수가 N보다 적을 경우 최댓값을 중간값으로 변경한다. <br> <br>
+
+                            이러한 과정을 반복해서 최솟값과 최댓값의 차이가 1이 되면 둘 중에 정답이 있으므로 확인하는 작업을 해야한다. <br>
+                            최댓값으로 랜선을 잘랐을 때 랜선의 개수가 N개가 나오면 최댓값을 출력하고 랜선의 개수가 N개보다 적으면 최솟값을 출력한다.
                         </li>
                     </ul>
                     <div class="languagebox">
@@ -77,37 +84,37 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/365f5fea200abb2997d9fc5b3afe3723.js"></script>
+                        <script src="https://gist.github.com/aroa97/1182bc7ae3ea4cf0560f0faf5276f36b.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/8e3e2c94791b4d3d73a715c21d0a128b.js"></script>
+                        <script src="https://gist.github.com/aroa97/2cac37320df3a3cae303036b22ae8080.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/3800ce0d5b6f6465de82299e803fa640.js"></script>
+                        <script src="https://gist.github.com/aroa97/d0e49a18b070b94340e6f854d6d624f3.js"></script>
                     </div>
 
                     <input type="radio" id="javascript" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/javascript.png">
-                        <script src="https://gist.github.com/aroa97/2956a121de11bb6d0a56942805c8bf26.js"></script>
+                        <script src="https://gist.github.com/aroa97/a5e9dbf4aa67c22c0fd6854e1771f085.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/efbc0c7b7ca941cde5417aa3f6befc64.js"></script>
+                        <script src="https://gist.github.com/aroa97/15baed727b81d1685c72b0f64bda91e9.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/17943b19b1855d045a380c0e081be18c.js"></script>
+                        <script src="https://gist.github.com/aroa97/379fd0ca27d29cbe31759e3b1e0ac9bb.js"></script>
                     </div>
                     
                 </article>

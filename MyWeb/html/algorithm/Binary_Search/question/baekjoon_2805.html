@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BinarySearch</title>
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 2805. 나무 자르기</div>
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/2805">https://www.acmicpc.net/problem/2805</a>
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                상근이는 나무 M미터가 필요하다. 근처에 나무를 구입할 곳이 모두 망해버렸기 때문에, 정부에 벌목 허가를 요청했다. 정부는 상근이네 집 근처의 나무 한 줄에 대한 벌목 허가를 내주었고, 상근이는 새로 구입한 목재절단기를 이용해서 나무를 구할것이다. <br> <br>
+
+                                목재절단기는 다음과 같이 동작한다. 먼저, 상근이는 절단기에 높이 H를 지정해야 한다. 
+                                높이를 지정하면 톱날이 땅으로부터 H미터 위로 올라간다. 그 다음, 한 줄에 연속해있는 나무를 모두 절단해버린다. 
+                                따라서, 높이가 H보다 큰 나무는 H 위의 부분이 잘릴 것이고, 낮은 나무는 잘리지 않을 것이다. 
+                                예를 들어, 한 줄에 연속해있는 나무의 높이가 20, 15, 10, 17이라고 하자. 
+                                상근이가 높이를 15로 지정했다면, 나무를 자른 뒤의 높이는 15, 15, 10, 15가 될 것이고, 상근이는 길이가 5인 나무와 2인 나무를 들고 집에 갈 것이다. (총 7미터를 집에 들고 간다) 절단기에 설정할 수 있는 높이는 양의 정수 또는 0이다. <br> <br>
+                                
+                                상근이는 환경에 매우 관심이 많기 때문에, 나무를 필요한 만큼만 집으로 가져가려고 한다. 이때, 적어도 M미터의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값을 구하는 프로그램을 작성하시오.
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 나무의 수 N과 상근이가 집으로 가져가려고 하는 나무의 길이 M이 주어진다. (1 ≤ N ≤ 1,000,000, 1 ≤ M ≤ 2,000,000,000) <br> <br>
+
+                                둘째 줄에는 나무의 높이가 주어진다. 나무의 높이의 합은 항상 M보다 크거나 같기 때문에, 상근이는 집에 필요한 나무를 항상 가져갈 수 있다. 높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0이다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                적어도 M미터의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값을 출력한다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            절단기 높이의 최솟값과 최댓값을 설정하고 그 사이의 임의의 값을 설정하고 비교하면서 범위를 좁혀간다. <br>
+                            최솟값은 0으로 최댓값은 입력받은 데이터 중 가장 큰 값으로 설정한다. <br> <br>
+
+                            <img style="height: 300px;" src="image/2805/2805_1.jpg"> <br>
+                            최솟값과 최댓값의 중간값을 이용해 가져갈 수 있는 나무의 길이의 합을 구한다. 이 때 절단기 높이보다 나무의 길이가 작거나 같으면 잘린 나무가 생기지 않으므로 계산에 포함하지 않는다. <br> <br>
+
+                            <img style="height: 200px;" src="image/2805/2805_2.jpg"> <br>
+                            잘린 나무의 길이의 합이 M보다 작을 경우 최댓값을 중간값으로 M보다 클 경우 최솟값을 중간값으로 변경한다. <br> <br>
+
+                            이러한 과정을 반복해서 최솟값과 최댓값의 차이가 1이 되면 둘 중에 정답이 있으므로 확인하는 작업을 해야한다. <br>
+                            최댓값으로 나무를 잘랐을 때 잘린 나무의 길이의 합이 M보다 작으면 최솟값을 출력 아니면 최댓값을 출력한다.
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label style="padding-top: 10px;"  for="javascript"> Java<br>Script </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/ce7bea6db22edd69c3a6077450a1d7a7.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/bb8d2b3e4157640cffa5f905385bf2f9.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/a68dda7cf2c6a23a9ed323ffe600d802.js"></script>
+                    </div>
+
+                    <input type="radio" id="javascript" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/javascript.png">
+                        <script src="https://gist.github.com/aroa97/a0fa8b7f4d039413366637fdd1f9ab32.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/6f6f986d773a561020cfbfd7d634e7ba.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/343f40cd7d269d131b2a205f941dcb44.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>

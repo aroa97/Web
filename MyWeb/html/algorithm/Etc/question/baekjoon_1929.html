@@ -32,37 +32,34 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 4344. 평균은 넘겠지</div>
+                    <div class="algorithm_title">백준 1929. 소수 구하기</div>
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/4344">https://www.acmicpc.net/problem/4344</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1929">https://www.acmicpc.net/problem/1929</a>
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                대학생 새내기들의 90%는 자신이 반에서 평균은 넘는다고 생각한다. 당신은 그들에게 슬픈 진실을 알려줘야 한다.
+                                M이상 N이하의 소수를 모두 출력하는 프로그램을 작성하시오.
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에는 테스트 케이스의 개수 C가 주어진다. <br> <br>
-
-                                둘째 줄부터 각 테스트 케이스마다 학생의 수 N(1 ≤ N ≤ 1000, N은 정수)이 첫 수로 주어지고, 이어서 N명의 점수가 주어진다. 점수는 0보다 크거나 같고, 100보다 작거나 같은 정수이다.
+                                첫째 줄에 자연수 M과 N이 빈 칸을 사이에 두고 주어진다. (1 ≤ M ≤ N ≤ 1,000,000) M이상 N이하의 소수가 하나 이상 있는 입력만 주어진다.
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                각 케이스마다 한 줄씩 평균을 넘는 학생들의 비율을 반올림하여 소수점 셋째 자리까지 출력한다. 정답과 출력값의 절대/상대 오차는 10-3이하이면 정답이다.
+                                한 줄에 하나씩, 증가하는 순서대로 소수를 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            각 테스트 케이스를 입력받을 때 학생 수와 각 학생의 점수를 변수에 저장해둔다. 동시에 학생의 점수 총합을 구한다. <br> <br>
-                            <img style="height: 200px;" src="image/4344/4344_1.jpg"> <br> <br>
-                            점수 총합과 학생 수로 평균을 구한 후 저장해둔 각 학생들의 점수와 비교한다. <br>
-                            <img style="height: 300px;" src="image/4344/4344_2.jpg"> <br> <br>
-                            평균을 넘는 학생의 점수만 세서 평균을 넘는 학생들의 비율을 구한 후 문제에서 원하는 답의 형태로 출력한다. <br> <br>
-                            <img style="height: 200px;" src="image/4344/4344_3.jpg">
+                            M과 N을 입력받으면 1부터 N까지의 소수를 구한 후, M이상 N이하의 소수를 출력하는 코드를 작성하기로 했다 <br> <br>
+                            <img style="height: 250px;" src="image/1929/1929_1.jpg"> <br>
+                            소수는 1과 자기 자신만 약수로 가지는 수이므로 약수의 개수는 2개여야 한다. 2부터 시작해서 자신의 배수에 해당하는 수에 약수 개수를 1 늘린다. <br> <br>
+                            <img style="height: 250px;" src="image/1929/1929_2.jpg"> <br>
+                            1은 모든 자연수가 약수로 가지는 수이므로 1을 제외한 약수가 1개인 수가 소수므로 M이상 N이하인 수 중 약수 개수가 1개인 자연수를 출력한다.
                         </li>
                     </ul>
                     <div class="languagebox">
@@ -77,37 +74,37 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/365f5fea200abb2997d9fc5b3afe3723.js"></script>
+                        <script src="https://gist.github.com/aroa97/73ccf7d06bac4dc8b9303b85be8fedb1.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/8e3e2c94791b4d3d73a715c21d0a128b.js"></script>
+                        <script src="https://gist.github.com/aroa97/7e497948df230d40ee99289ed5c0697b.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/3800ce0d5b6f6465de82299e803fa640.js"></script>
+                        <script src="https://gist.github.com/aroa97/fc1614cf82df3bdfb10146f314cfe496.js"></script>
                     </div>
 
                     <input type="radio" id="javascript" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/javascript.png">
-                        <script src="https://gist.github.com/aroa97/2956a121de11bb6d0a56942805c8bf26.js"></script>
+                        <script src="https://gist.github.com/aroa97/6fb7ad301a263c4ec7c0578d81a901a6.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/efbc0c7b7ca941cde5417aa3f6befc64.js"></script>
+                        <script src="https://gist.github.com/aroa97/77656356394346f0c816c5769cdcf243.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/17943b19b1855d045a380c0e081be18c.js"></script>
+                        <script src="https://gist.github.com/aroa97/afb78f4e594c618bba54f40b128bd8f0.js"></script>
                     </div>
                     
                 </article>
