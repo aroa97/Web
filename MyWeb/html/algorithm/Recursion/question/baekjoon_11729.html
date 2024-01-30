@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recursion</title>
+        <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="Logo"><h1>YSJ</h1></div>
+            <nav>
+                <ul>
+                    <a href="../../../Main.html"><li>Home</li></a>
+                    <a href="../../Algorithm.html"><li>Algorithm</li></a>
+                    <li>Projects
+                        <div class="submenu">
+                            <ul> <h2>Unity</h2>
+                                <li>Flappy Bird</li>
+                                <li>Angry Bird</li>
+                                <li><a href="../../../../Galaga/index.html">Galaga</a></li>
+                            </ul>
+                            <ul> <h2>Graphic</h2>
+                                <li><a href="../../../projects/Soul_After.html">Soul After</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <a href="../../../AboutMe/AboutMe_Main.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section>
+                <article>
+                    <div class="algorithm_title">백준 11729. 하노이 탑 이동 순서</div>
+                    <ul>
+                        <label for="question"> <h2>문제 정보 ▼</h2> </label>
+                        <input type="checkbox" id="question" name="questionInf">
+                        <div>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/11729">https://www.acmicpc.net/problem/11729</a>
+                            </li>
+                            <li>
+                                <h3>문제 :</h3>
+                                세 개의 장대가 있고 첫 번째 장대에는 반경이 서로 다른 n개의 원판이 쌓여 있다. 각 원판은 반경이 큰 순서대로 쌓여있다. 이제 수도승들이 다음 규칙에 따라 첫 번째 장대에서 세 번째 장대로 옮기려 한다. <br> <br>
+
+                                &nbsp; &nbsp; 1. 한 번에 한 개의 원판만을 다른 탑으로 옮길 수 있다. <br>
+                                &nbsp; &nbsp; 2. 쌓아 놓은 원판은 항상 위의 것이 아래의 것보다 작아야 한다. <br> <br>
+
+                                이 작업을 수행하는데 필요한 이동 순서를 출력하는 프로그램을 작성하라. 단, 이동 횟수는 최소가 되어야 한다. <br> <br>
+                                
+                                아래 그림은 원판이 5개인 경우의 예시이다. <br> <br>
+                                <img style="height: 175px;" src="image/11729/11729_1.png">
+                            </li>
+                            <li>
+                                <h3>입력 :</h3>
+                                첫째 줄에 첫 번째 장대에 쌓인 원판의 개수 N (1 ≤ N ≤ 20)이 주어진다.
+                            </li>
+                            <li>
+                                <h3>출력 :</h3>
+                                첫째 줄에 옮긴 횟수 K를 출력한다. <br> <br>
+
+                                두 번째 줄부터 수행 과정을 출력한다. 두 번째 줄부터 K개의 줄에 걸쳐 두 정수 A B를 빈칸을 사이에 두고 출력하는데, 이는 A번째 탑의 가장 위에 있는 원판을 B번째 탑의 가장 위로 옮긴다는 뜻이다.
+                            </li>
+                        </div>
+                        <li>
+                            <h3>풀이 :</h3>
+                            가장 큰 원판을 옮기기 위해서는 가장 큰 원판 위에 있던 모든 원판을 두 번째 장대에 옮겨야 한다. 가장 큰 원판을 세 번째 장대에 옮긴 후 두 번째 장대에 있는 원판들을 세 번째 장대로 옮긴다. <br> <br>
+
+                            원판이 1개일 때 옮기는 횟수는 1번이다. <br>
+                            <img style="height: 300px;" src="image/11729/11729_2.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_3.jpg"> <br> <br>
+
+                            원판이 2개일 때 옮기는 횟수는 3번이다. <br>
+                            <img style="height: 300px;" src="image/11729/11729_4.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_5.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_6.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_7.jpg"> <br> <br>
+
+                            원판이 3개일 때 옮기는 횟수는 7번이다. <br>
+                            <img style="height: 300px;" src="image/11729/11729_8.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_9.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_10.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_11.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_12.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_13.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_14.jpg"> <br>
+                            <img style="height: 300px;" src="image/11729/11729_15.jpg"> <br> <br>
+
+                            원판을 다른 곳에 옮기려면 그 위에 있는 원판이 옮기기 전과 옮긴 후 이렇게 두번 욺겨지는 걸 확인할 수 있다. <br>
+                            원판 개수에 따른 옮긴 횟수는 점화식으로는 d[n] = d[n - 1] * 2 + 1 (d[1] = 1), 아니면 2<sup>n</sup> - 1로 계산할 수 있다. <br> <br>
+                            
+                            옮긴 횟수를 출력 후에는 옮긴 원판이 현재 장대에서 어느 장대로 옮겨졌는 지를 출력해야하는 데 원판이 3개일 때 답은 다음과 같다 <br> <br>
+                            <img style="height: 450px;" src="image/11729/11729_16.jpg"> <br> <br>
+
+                            여기서 3번 원판을 기준으로 보면 3번 원판을 옮기기 위해 2번 원판을 3번 원판의 현재 위치인 첫 번째 장대도 옮겨질 위치인 세 번째 장대도 아닌 두 번째 장대로 옮기고 옮긴 후에는 2번 원판이 3번 원판을 옮긴 곳에 옮겨진다. <br> <br>
+                            <img style="height: 450px;" src="image/11729/11729_17.jpg"> <br> <br>
+                            
+                            즉, 큰 원판 위에 작은 원판의 경우 큰 원판이 있었던 위치와 큰 원판의 현재 위치와 큰 원판이 갈 위치를 제외한 위치의 장대 번호가 출력이 되고 큰 원판이 옮겨진 후에는 현재 작은 원판의 위치와 큰 원판이 옮기진 위치가 출력된다. <br>
+                            정리하면 다음과 같다. <br> <br>
+
+                            (큰 원판 위치) (6 - 큰 원판 위치 - 큰 원판이 갈 위치) <br>
+                            (큰 원판 위치) (큰 원판이 갈 위치) <br>
+                            (6 - 큰 원판 위치 - 큰 원판이 갈 위치) (큰 원판이 갈 위치) <br> <br>
+
+                            이 점을 유의하여 재귀함수를 작성 후 답을 출력한다.
+                        </li>
+                    </ul>
+                    <div class="languagebox">
+                        <label for="c++"> C++ </label>
+                        <label for="csharp"> C# </label>
+                        <label for="java"> Java </label>
+                        <label style="padding-top: 10px;"  for="javascript"> Java<br>Script </label>
+                        <label for="kotlin"> Kotlin </label> 
+                        <label for="python"> Python </label>
+                    </div>
+
+                    <input type="radio" id="c++" name="language_radio" checked="checked">
+                    <div class="codebox">
+                        <img src="../../image/c++.png">
+                        <script src="https://gist.github.com/aroa97/dc34232b32f4e3111b449a98d601c4ff.js"></script>
+                    </div>
+
+                    <input type="radio" id="csharp" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/csharp.png">
+                        <script src="https://gist.github.com/aroa97/5c34412c2d30a47d0353816f3a4e3450.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="java" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/java.png">
+                        <script src="https://gist.github.com/aroa97/7fc2e72b0d5a4aba5a9dd54c2b13a1af.js"></script>
+                    </div>
+
+                    <input type="radio" id="javascript" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/javascript.png">
+                        <script src="https://gist.github.com/aroa97/1c1b352fc0dcf54cb8770ef67995af55.js"></script>
+                    </div>
+
+                    <input type="radio" id="kotlin" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/kotlin.png">
+                        <script src="https://gist.github.com/aroa97/a92c3083d8aa5de98a75ea59c97f98b2.js"></script>
+                    </div>
+                    
+                    <input type="radio" id="python" name="language_radio">
+                    <div class="codebox">
+                        <img src="../../image/python.png">
+                        <script src="https://gist.github.com/aroa97/8027917a8d908e7d0f09b0042841ff1a.js"></script>
+                    </div>
+                    
+                </article>
+            </section>
+        </div>
+        <footer>
+            <h2> YSJ </h2> <br>
+            Name : 윤선준 / Yoon Sun Jun <br>
+            Email : ehild97@gmail.com / saro97@naver.com
+        </footer>
+    </body>
+</html>
