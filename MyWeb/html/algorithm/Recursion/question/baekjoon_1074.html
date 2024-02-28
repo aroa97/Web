@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Implementation</title>
+        <title>Recursion</title>
         <link rel="stylesheet" type="text/css" href="../../css/Algorithm_question.css">
         <link rel="stylesheet" type="text/css" href="../../../css/header_style.css">
         <link rel="stylesheet" type="text/css" href="../../../css/footer_style.css">
@@ -32,50 +32,64 @@
         <div id="main">
             <section>
                 <article>
-                    <div class="algorithm_title">백준 13015. 별 찍기 - 23 </div> 
+                    <div class="algorithm_title">백준 1074. Z</div>
                     <ul>
                         <label for="question"> <h2>문제 정보 ▼</h2> </label>
                         <input type="checkbox" id="question" name="questionInf">
                         <div>
                             <li>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/13015">https://www.acmicpc.net/problem/13015</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.acmicpc.net/problem/1074">https://www.acmicpc.net/problem/1074</a>
                             </li>
                             <li>
                                 <h3>문제 :</h3>
-                                예제를 보고 규칙을 유추한 뒤에 별을 찍어 보세요.
+                                한수는 크기가 2N × 2N인 2차원 배열을 Z모양으로 탐색하려고 한다. 예를 들어, 2×2배열을 왼쪽 위칸, 오른쪽 위칸, 왼쪽 아래칸, 오른쪽 아래칸 순서대로 방문하면 Z모양이다. <br> <br>
+
+                                <img style="height: 100px;" src="image/1074/1074_1.png"> <br> 
+
+                                N > 1인 경우, 배열을 크기가 2N-1 × 2N-1로 4등분 한 후에 재귀적으로 순서대로 방문한다. <br> <br>
+
+                                다음 예는 2<sup>2</sup> × 2<sup>2</sup> 크기의 배열을 방문한 순서이다. <br> 
+                                <img style="height: 200px;" src="image/1074/1074_2.png"> <br> <br>
+
+                                N이 주어졌을 때, r행 c열을 몇 번째로 방문하는지 출력하는 프로그램을 작성하시오. <br> <br>
+
+                                다음은 N=3일 때의 예이다. <br>
+                                <img style="height: 400px;" src="image/1074/1074_3.png"> <br>
                             </li>
                             <li>
                                 <h3>입력 :</h3>
-                                첫째 줄에 N(2 ≤ N ≤ 100)이 주어진다.
+                                첫째 줄에 정수 N, r, c가 주어진다.
                             </li>
                             <li>
                                 <h3>출력 :</h3>
-                                규칙대로 별을 출력한다.
+                                r행 c열을 몇 번째로 방문했는지 출력한다.
                             </li>
                         </div>
                         <li>
                             <h3>풀이 :</h3>
-                            문제의 예제는 다음과 같다. <br>
-                            <img style="height: 250px;" src="image/13015/13015_1.jpg"> <br>
-                            <img style="height: 500px;" src="image/13015/13015_2.jpg"> <br> <br>
+                            N = 3일 경우 <br>
+                            <img style="height: 400px;" src="image/1074/1074_4.jpg"> <br> <br>
 
-                            우선 X자 모양의 위와 아래에 N의 값과 같은 수의 별이 찍혀있다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_3.jpg"> <br> <br>
+                            2차원 배열을 4등분으로 나눠서 r행 c열이 어디에 속해있는 지 확인한다. <br>
+                            <img style="height: 500px;" src="image/1074/1074_5.jpg"> <br>
 
-                            가운데 맨 위에는 N * 2 - 3만큼의 빈칸이 있으며 행이 증가할수록 2개씩 적어지고 있다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_4.jpg"> <br> <br>
+                            어디에 속해있는 지 확인했으면 4등분한 배열의 크기에 (속해있는 번호 - 1)을 곱한 값을 더한다. 입력 데이터가 3 4 6 일 경우 처음 4등분했을 때 4번 째에 속하므로 16 * (4 - 1)을 해서 48이다. <br>
+                            <img style="height: 500px;" src="image/1074/1074_6.jpg"> <br> <br>
 
-                            왼쪽 두번째 줄부터는 빈칸이 하나씩 증가하고 있다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_5.jpg"> <br> <br>
+                            그 후 r과 c를 속해있는 번호의 가로, 세로 크기만큼 뺀다. 4등분한 배열의 좌표를 초기화하기 위해서이다. 입력 데이터가 3 4 6 일 경우 뺀 후는 r = 0, c = 2가 될 것이다. <br> <br>
 
-                            빈칸 다음 N 값만큼의 공간에는 처음과 끝에 별이 찍혀있으며 N - 2 만큼의 빈칸이 있다. 이러한 모양이 왼쪽, 오른쪽 하나씩 있다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_6.jpg"> <br> <br>
+                            계속해서 2차원 배열을 4등분으로 나눠서 r행 c열이 어디에 속해있는 지 확인한다. <br>
+                            <img style="height: 400px;" src="image/1074/1074_7.jpg"> <br>
 
-                            가운데는 별이 겹치는 부분이 생겨서 별이 3개다. <br>
-                            <img style="height: 500px;" src="image/13015/13015_7.jpg"> <br> <br>
+                            r = 0, c = 2이므로 2번 째에 속해있다. <br> 
+                            동일하게 배열의 크기만큼 더해준다. 4 * (2 - 1) = 4. 48 + 4 = 52. <br>
+                            r과 c의 좌표 또한 수정해준다. 2번 째에 속해있으므로 r은 그대로 두고 c는 가로 크기만큼 뺀다. r = 0, c = 2 - 2 = 0. <br>
+                            <img style="height: 400px;" src="image/1074/1074_8.jpg"> <br> <br>
 
-                            이러한 규칙을 신경쓰면서 코드를 작성, 밑의 나머지 부분은 빈칸의 규칙을 거꾸로 적용하면 된다.
-                            <img style="height: 500px;" src="image/13015/13015_8.jpg">
+                            마지막으로 2차원 배열을 4등분으로 나눠서 r행 c열이 어디에 속해있는 지 확인한다. <br>
+                            이전과 같은 방식으로 하면 1번 째에 속해있고 1번 째의 경우 변경사항이 없으므로 그대로 둔다. <br> <br>
+
+                            마지막 작업까지 완료했으면 답을 출력할 수 있다. 지금 든 예제의 경우 답은 52가 나올 것이다. 
                         </li>
                     </ul>
                     <div class="languagebox">
@@ -90,37 +104,37 @@
                     <input type="radio" id="c++" name="language_radio" checked="checked">
                     <div class="codebox">
                         <img src="../../image/c++.png">
-                        <script src="https://gist.github.com/aroa97/8c997a940c916234eb601d2b3880d896.js"></script>
+                        <script src="https://gist.github.com/aroa97/5f0ef67ca3e805dc9e24b73bc78f7524.js"></script>
                     </div>
 
                     <input type="radio" id="csharp" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/csharp.png">
-                        <script src="https://gist.github.com/aroa97/f34a479a6b2f42875aa23539d5a1bebc.js"></script>
+                        <script src="https://gist.github.com/aroa97/33e67100bb1397cd8886d8b3490e403f.js"></script>
                     </div>
                     
                     <input type="radio" id="java" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/java.png">
-                        <script src="https://gist.github.com/aroa97/c9587c6a711cd62311ed52811d8f399a.js"></script>
+                        <script src="https://gist.github.com/aroa97/f02fc0862af6674711064d334436a507.js"></script>
                     </div>
 
                     <input type="radio" id="javascript" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/javascript.png">
-                        <script src="https://gist.github.com/aroa97/01a1551d563f946332f886f75fd6d958.js"></script>
+                        <script src="https://gist.github.com/aroa97/fd436a0db777112be33ecdf5452d3524.js"></script>
                     </div>
 
                     <input type="radio" id="kotlin" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/kotlin.png">
-                        <script src="https://gist.github.com/aroa97/8bd13f5feaf531be025be25f7c08c2c8.js"></script>
+                        <script src="https://gist.github.com/aroa97/bf67f7a22758822b07e1f755ddbfc064.js"></script>
                     </div>
                     
                     <input type="radio" id="python" name="language_radio">
                     <div class="codebox">
                         <img src="../../image/python.png">
-                        <script src="https://gist.github.com/aroa97/d790962c15ecc25dda778442d523fd0e.js"></script>
+                        <script src="https://gist.github.com/aroa97/ad051389b7f3147ecef4d7490d82874a.js"></script>
                     </div>
                     
                 </article>
