@@ -1,0 +1,48 @@
+p.fontbold {
+    font-weight: bolder;
+    display: inline;
+    font-size: 110%;
+}
+section a {
+    color: pink;
+}
+section a:hover {
+    color: red;
+}
+
+section {
+    padding: 20px 0px 0px 100px;
+}
+
+section > label {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid;
+    border-color: pink;
+    font-size: 20px;
+    font-weight: bold;
+}
+section > label:hover {
+    color: red;
+    border-color: red;
+}
+section > input[type="checkbox"] {
+    display: none;
+}
+section > input + div {
+    padding-left: 30px; padding-bottom: 20px;
+    line-height: 30px;
+    display: inline-block;
+}
+section > input[type="checkbox"]:checked + div {
+    display: inline-block;
+}
+
+section table {
+    width: 500px;
+    text-align: center;
+    border: 2px solid;
+}
+section table td {
+    border: 2px solid;
+}
