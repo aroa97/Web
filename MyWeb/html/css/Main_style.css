@@ -12,13 +12,15 @@ section  .Home {
     background-size: contain;
     opacity: 0.9;
 }
-section  .Home > .greetings {
+section  .Home .greetings {
     padding-top: 200px;
 
     text-align: center;
     opacity: 1;
+}
 
-    font-size: 200%;
+section  .Home .greetings h1 {
+    font-size: 300%;
 }
 
 
