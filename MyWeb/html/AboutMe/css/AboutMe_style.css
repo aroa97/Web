@@ -35,14 +35,19 @@ section > input + div {
     display: inline-block;
 }
 section > input[type="checkbox"]:checked + div {
-    display: inline-block;
+    display: none;
 }
 
 section table {
     width: 500px;
     text-align: center;
     border: 2px solid;
+    border-color: pink;
+    border-spacing: 0px;
 }
 section table td {
+    padding: 5px;
+
     border: 2px solid;
+    border-color: pink;
 }
