@@ -69,3 +69,18 @@ section input[type="radio"]:checked + .illustration {
 .rightarrow img {
     width: 200px;
 }
+
+.preview {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.preview label > img {
+    width: 150px;
+    margin: 10px;
+
+    opacity: 0.5;
+}
+.preview label > img:hover {
+    opacity: 1;
+}
