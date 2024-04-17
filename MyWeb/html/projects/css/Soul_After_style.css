@@ -75,12 +75,12 @@ section input[type="radio"]:checked + .illustration {
     display: flex;
     justify-content: center;
 }
-.preview label > img {
-    width: 150px;
+.preview label img {
+    width: 150px; height: auto;
     margin: 10px;
 
     opacity: 0.5;
 }
-.preview label > img:hover {
+.preview label img:hover {
     opacity: 1;
 }
