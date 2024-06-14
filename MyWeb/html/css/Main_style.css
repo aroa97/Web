@@ -18,8 +18,155 @@ section  .Home .greetings {
 
     text-align: center;
     font-size: 200%;
-    opacity: 1;
 }
+
+
+section .Home .animationGalaga {
+    position: absolute;
+    width: 540px; height: 100%;
+    left: 50px;
+
+    overflow: hidden;
+}
+section .Home .animationGalaga .spaceship {
+    position: absolute;
+    bottom: 50px;
+    left: -100px;
+
+    width: 100px; height: 100px;
+
+    animation-name: aniSpaceship;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+section .Home .animationGalaga img {
+    width: 100px;
+}
+
+@keyframes aniSpaceship {
+    0% { transform: translate(350px, 200px); }
+    10% { transform: translate(350px, 0); }
+    20% { transform: translate(200px, 0); }
+    40% { transform: translate(500px, 0); }
+    50% { transform: translate(350px, 0); }
+    60% { transform: translate(350px, 0); }
+    100% { transform: translate(350px, -500px); }
+}
+
+section .Home .animationGalaga .bullet {
+    position: absolute;
+
+    width: 100px; height: 100px;
+    visibility: hidden;
+
+    background-image: url("./../image/Galaga/Bullet.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    animation-name: aniBullet;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+@keyframes aniBullet {
+    0% { transform: translate(0, 350px); visibility: visible; }
+    100% { transform: translate(0, 100px); }
+}
+
+
+section .Home .animationGalaga .enemy1 {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+    visibility: hidden;
+    width: 100px; height: 100px;
+
+    background-image: url("./../image/Galaga/Enemy1_1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    animation-name: aniEnemy1;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+section .Home .animationGalaga .enemy2 {
+    position: absolute;
+    top: 100px;
+    left: 400px;
+
+    visibility: hidden;
+    width: 100px; height: 100px;
+
+    background-image: url("./../image/Galaga/Enemy2_1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    animation-name: aniEnemy2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+
+section .Home .animationGalaga .enemy3 {
+    position: absolute;
+    top: 100px;
+    left: 250px;
+
+    visibility: hidden;
+    width: 100px; height: 100px;
+
+    background-image: url("./../image/Galaga/Enemy3_1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    animation-name: aniEnemy3;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+
+@keyframes aniEnemy1 {
+    0% { background-image: url("./../image/Galaga/Enemy1_1.png") ; visibility: visible; }
+    10% { background-image: url("./../image/Galaga/Enemy1_2.png") ; }
+    20% { background-image: url("./../image/Galaga/Enemy1_1.png") ; }
+    30% { background-image: url("./../image/Galaga/Enemy1_2.png") ; }
+    40% { background-image: url("./../image/Galaga/Enemy_Explosion_1.png") ; }
+    45% { background-image: url("./../image/Galaga/Enemy_Explosion_2.png") ; }
+    50% { background-image: url("./../image/Galaga/Enemy_Explosion_3.png") ; }
+    55% { background-image: url("./../image/Galaga/Enemy_Explosion_4.png") ; }
+    60% { background-image: none; }
+    100% { background-image: none; }
+}
+
+@keyframes aniEnemy2 {
+    0% { background-image: url("./../image/Galaga/Enemy2_1.png") ; visibility: visible; }
+    10% { background-image: url("./../image/Galaga/Enemy2_2.png") ; }
+    20% { background-image: url("./../image/Galaga/Enemy2_1.png") ; }
+    30% { background-image: url("./../image/Galaga/Enemy2_2.png") ; }
+    40% { background-image: url("./../image/Galaga/Enemy2_1.png") ; }
+    50% { background-image: url("./../image/Galaga/Enemy2_2.png") ; }
+    60% { background-image: url("./../image/Galaga/Enemy_Explosion_1.png") ; }
+    65% { background-image: url("./../image/Galaga/Enemy_Explosion_2.png") ; }
+    70% { background-image: url("./../image/Galaga/Enemy_Explosion_3.png") ; }
+    75% { background-image: url("./../image/Galaga/Enemy_Explosion_4.png") ; }
+    80% { background-image: none ; }
+    100% { background-image: none ; }
+}
+
+@keyframes aniEnemy3 {
+    0% { background-image: url("./../image/Galaga/Enemy3_1.png") ; visibility: visible; }
+    10% { background-image: url("./../image/Galaga/Enemy3_2.png") ; }
+    20% { background-image: url("./../image/Galaga/Enemy3_1.png") ; }
+    30% { background-image: url("./../image/Galaga/Enemy4_2.png") ; }
+    40% { background-image: url("./../image/Galaga/Enemy4_1.png") ; }
+    50% { background-image: url("./../image/Galaga/Enemy4_2.png") ; }
+    60% { background-image: url("./../image/Galaga/Enemy4_1.png") ; }
+    70% { background-image: url("./../image/Galaga/Enemy_Explosion_1.png") ; }
+    75% { background-image: url("./../image/Galaga/Enemy_Explosion_2.png") ; }
+    80% { background-image: url("./../image/Galaga/Enemy_Explosion_3.png") ; }
+    85% { background-image: url("./../image/Galaga/Enemy_Explosion_4.png") ; }
+    90% { background-image: none; }
+    100% { background-image: none; }
+}
+
 
 section .Home .animationIMG {
     position: absolute;
@@ -32,8 +179,6 @@ section .Home .animationIMG .scrollIMG {
     opacity: 0.7;
 
     transition: all 0.5s;
-
-    
 }
 section .Home .animationIMG .scrollIMG:hover {
     opacity: 1;
