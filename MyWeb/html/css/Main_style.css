@@ -170,8 +170,8 @@ section .Home .animationGalaga .enemy3 {
 
 section .Home .animationIMG {
     position: absolute;
-    width: 540px; height: 100%;
-    right: 50px;
+    width: 540px; height: 390px;
+    top: 45px; right: 50px;
 
     overflow: hidden;
 }
