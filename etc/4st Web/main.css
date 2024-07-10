@@ -1,0 +1,108 @@
+* {
+    margin: 0px; padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+}
+
+#base {
+    display: flex;
+    width: 1280px; height: 720px; margin: 20px auto; 
+    background-color: rgb(50, 50, 50);
+}
+
+#base .title_box {
+    display: flex;
+    width: 280px; height: 100%; text-align: center;
+    border-right: 2px solid gray;
+    flex-wrap: wrap; align-items: flex-end;
+}
+
+#base .title_box .up_box {
+    width: 100%; 
+    margin: auto 0px;
+    font: italic bold 30pt/50px Times New Roman;
+    color: white;
+}
+#base .title_box .down_box {
+    width: 100%;
+    margin-bottom: 20px;
+    font: normal 10pt/16pt Verdana;
+    color: white;
+}
+
+#base .contents_box {
+    display: flex; 
+    width: 1000px; height: 100%; 
+    flex-wrap: wrap;
+}
+
+nav {
+    display: flex;
+    width: 100%; height: 120px; padding: 10px;
+    border-bottom: 2px solid gray;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+section {
+    display: flex;
+    width: 100%; height: 600px;
+}
+
+article {
+    width: 250px; height: 100%; 
+    opacity: 0.4;
+
+    transition-duration: 0.5s;
+    position: relative;
+}
+article:hover { opacity: 1; }
+
+article .background {
+    position: absolute;
+    width: 0%; height: 100%;
+    background-image: url(img/back.png);
+    transition-duration: 0.5s;
+}
+article:hover .background { 
+    width: 100%; 
+    z-index: 1;
+}
+
+article .inner_box {
+    display: flex;
+    width: 100%; height: 100%; padding: 70px 40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    color: white;
+    transition-duration: 0.5s;
+}
+article:hover .inner_box { padding-right: 10px; }
+
+article .inner_box .number {
+    width: 72px;
+    font: normal bold 48px/1 Verdana;
+    border-bottom: 3px solid white;
+    padding-bottom: 20px;
+    z-index: 2;
+}
+article .inner_box .title {
+    width: 170px;
+    font: normal bold 18px/1 Verdana;
+    padding: 20px 0px;
+    z-index: 2;
+}
+article .inner_box .detail {
+    width: 170px;
+    font: normal 15px/24px Verdana;
+    flex-grow: 2;
+    z-index: 2;
+}
+article .inner_box a { z-index: 2; }
+
+article .inner_box a img { 
+    width: 100%; 
+}
